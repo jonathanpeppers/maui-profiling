@@ -95,7 +95,8 @@ jobs:
     displayName: build android
 
   - powershell: |
-      & dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -r $(RuntimeIdentifier) -p:AndroidPackageFormat=apk -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui.binlog
+      & dotnet restore HelloMaui/HelloMaui.csproj -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-restore.binlog
+      & dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -r $(RuntimeIdentifier) -p:AndroidPackageFormat=apk --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui.binlog
     displayName: build maui
 
   - task: CopyFiles@2
@@ -110,7 +111,7 @@ jobs:
     displayName: build android AOT
 
   - powershell: |
-      & dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -r $(RuntimeIdentifier) -t:Rebuild -p:AndroidPackageFormat=apk -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-Aot.binlog
+      & dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -r $(RuntimeIdentifier) -t:Rebuild -p:AndroidPackageFormat=apk -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-Aot.binlog
     displayName: build maui AOT
 
   - task: CopyFiles@2
