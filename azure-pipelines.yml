@@ -31,6 +31,7 @@ jobs:
       msbuildArguments: -restore -t:SignAndroidPackage -p:AndroidPackageFormat=apk -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsApp.binlog
 
   - task: CopyFiles@2
+    displayName: copy apks
     inputs:
       contents: '**/*-Signed.apk'
       targetFolder: $(Build.ArtifactStagingDirectory)/release
@@ -48,6 +49,7 @@ jobs:
       msbuildArguments: -restore -t:Clean,SignAndroidPackage -p:AndroidPackageFormat=apk -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsApp-Aot.binlog
 
   - task: CopyFiles@2
+    displayName: copy apks
     inputs:
       contents: '**/*-Signed.apk'
       targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
@@ -83,22 +85,24 @@ jobs:
 
   - powershell: |
       & dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -p:AndroidPackageFormat=apk -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui.binlog
-    displayName: build android
+    displayName: build maui
 
   - task: CopyFiles@2
+    displayName: copy apks
     inputs:
       contents: '**/*-Signed.apk'
       targetFolder: $(Build.ArtifactStagingDirectory)/release
 
   - powershell: |
       & dotnet build HelloAndroid/HelloAndroid.csproj -t:Rebuild -p:AndroidPackageFormat=apk -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid-Aot.binlog
-    displayName: build android
+    displayName: build android AOT
 
   - powershell: |
       & dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -t:Rebuild -p:AndroidPackageFormat=apk -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-Aot.binlog
-    displayName: build android
+    displayName: build maui AOT
 
   - task: CopyFiles@2
+    displayName: copy apks
     inputs:
       contents: '**/*-Signed.apk'
       targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
