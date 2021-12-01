@@ -36,6 +36,7 @@ jobs:
     displayName: copy apks
     inputs:
       contents: '**/*-Signed.apk'
+      flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release
 
   - task: MSBuild@1
@@ -54,6 +55,7 @@ jobs:
     displayName: copy apks
     inputs:
       contents: '**/*-Signed.apk'
+      flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
 
   - task: PublishBuildArtifacts@1
@@ -93,6 +95,7 @@ jobs:
     displayName: copy apks
     inputs:
       contents: '**/*-Signed.apk'
+      flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release
 
   - powershell: |
@@ -107,6 +110,7 @@ jobs:
     displayName: copy apks
     inputs:
       contents: '**/*-Signed.apk'
+      flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
 
   - task: PublishBuildArtifacts@1
