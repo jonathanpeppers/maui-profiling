@@ -7,6 +7,7 @@ variables:
   Configuration: Release
   AndroidAbi: arm64-v8a
   RuntimeIdentifier: android-arm64
+  DotNet.Version: 6.0.100
   DotNet.Cli.Telemetry.OptOut: true
 
 jobs:
@@ -15,6 +16,11 @@ jobs:
   pool:
     vmImage: macOS-latest
   steps:
+
+  - task: UseDotNet@2
+    displayName: Use .NET 6
+    inputs:
+      version: $(DotNet.Version)
 
   - powershell: |
       & dotnet tool update --global boots --version 1.0.4.624
@@ -73,7 +79,7 @@ jobs:
   - task: UseDotNet@2
     displayName: Use .NET 6
     inputs:
-      version: 6.0.100
+      version: $(DotNet.Version)
 
   - powershell: |
       & dotnet workload install maui android-aot --verbosity diag
