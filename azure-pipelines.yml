@@ -1,0 +1,126 @@
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+variables:
+  Configuration: Release
+  AndroidSupportedAbis: arm64-v8a
+  AndroidPackageFormat: apk
+  RID: android-arm64
+  DotNet.Version: 6.0.100
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+
+- job: Xamarin
+  pool:
+    vmImage: macOS-latest
+  steps:
+
+  - task: UseDotNet@2
+    displayName: Use .NET 6
+    inputs:
+      version: $(DotNet.Version)
+
+  - bash: >
+      dotnet tool install boots --tool-path boots &&
+      ./boots/boots https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/5343278/d17-0/6b0e6b265390832dcfb499e9e1e893c462548a30/xamarin.android-12.1.0.5.pkg
+    displayName: install Xamarin.Android
+
+  - task: MSBuild@1
+    displayName: build Xamarin.Android app
+    inputs:
+      solution: XamarinAndroidApp/XamarinAndroidApp/XamarinAndroidApp.csproj
+      msbuildArguments: -restore -t:SignAndroidPackage -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinAndroidApp.binlog
+
+  - task: MSBuild@1
+    displayName: build Xamarin.Forms app
+    inputs:
+      solution: XamarinFormsApp/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
+      msbuildArguments: -restore -t:SignAndroidPackage -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsApp.binlog
+
+  - task: CopyFiles@2
+    displayName: copy apks
+    inputs:
+      contents: '**/*-Signed.apk'
+      flattenFolders: true
+      targetFolder: $(Build.ArtifactStagingDirectory)/release
+
+  - task: MSBuild@1
+    displayName: build Xamarin.Android app AOT
+    inputs:
+      solution: XamarinAndroidApp/XamarinAndroidApp/XamarinAndroidApp.csproj
+      msbuildArguments: -restore -t:Clean,SignAndroidPackage -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinAndroidApp-Aot.binlog
+
+  - task: MSBuild@1
+    displayName: build Xamarin.Forms app AOT
+    inputs:
+      solution: XamarinFormsApp/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
+      msbuildArguments: -restore -t:Clean,SignAndroidPackage -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsApp-Aot.binlog
+
+  - task: CopyFiles@2
+    displayName: copy apks
+    inputs:
+      contents: '**/*-Signed.apk'
+      flattenFolders: true
+      targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
+
+  - task: PublishBuildArtifacts@1
+    displayName: upload artifacts
+    inputs:
+      artifactName: xamarin-artifacts
+    condition: succeededOrFailed()
+
+- job: MAUI
+  pool:
+    vmImage: macOS-latest
+  steps:
+
+  - task: UseDotNet@2
+    displayName: Use .NET 6
+    inputs:
+      version: $(DotNet.Version)
+
+  - bash: dotnet workload install maui android-aot --verbosity diag
+    displayName: install optional workloads
+
+  - bash: >
+      dotnet new android -o HelloAndroid &&
+      dotnet new maui -o HelloMaui
+    displayName: dotnet new
+
+  - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid.binlog
+    displayName: build android
+
+  - bash: >
+      dotnet restore HelloMaui/HelloMaui.csproj -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-restore.binlog &&
+      dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -r $(RID) --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui.binlog
+    displayName: build maui
+
+  - task: CopyFiles@2
+    displayName: copy apks
+    inputs:
+      contents: '**/*-Signed.apk'
+      flattenFolders: true
+      targetFolder: $(Build.ArtifactStagingDirectory)/release
+
+  - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid-Aot.binlog
+    displayName: build android AOT
+
+  - bash: dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-Aot.binlog
+    displayName: build maui AOT
+
+  - task: CopyFiles@2
+    displayName: copy apks
+    inputs:
+      contents: '**/*-Signed.apk'
+      flattenFolders: true
+      targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
+
+  - task: PublishBuildArtifacts@1
+    displayName: upload artifacts
+    inputs:
+      artifactName: maui-artifacts
+    condition: succeededOrFailed()
