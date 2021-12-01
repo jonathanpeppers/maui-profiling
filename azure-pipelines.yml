@@ -24,8 +24,8 @@ jobs:
       version: $(DotNet.Version)
 
   - bash: >
-      dotnet tool install --global boots &&
-      boots https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/5343278/d17-0/6b0e6b265390832dcfb499e9e1e893c462548a30/xamarin.android-12.1.0.5.pkg
+      dotnet tool install boots --tool-path boots &&
+      ./boots/boots https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/5343278/d17-0/6b0e6b265390832dcfb499e9e1e893c462548a30/xamarin.android-12.1.0.5.pkg
     displayName: install Xamarin.Android
 
   - task: MSBuild@1
