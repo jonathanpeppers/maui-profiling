@@ -3,56 +3,108 @@
 trigger:
 - main
 
-pool:
-  vmImage: macOS-latest
-
 variables:
   Configuration: Release
 
-steps:
+jobs:
 
-- powershell: |
-    & dotnet tool update --global boots --version 1.0.4.624
-    & boots https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/5343278/d17-0/6b0e6b265390832dcfb499e9e1e893c462548a30/xamarin.android-12.1.0.5.pkg
-  displayName: install Xamarin.Android
+- job: Xamarin
+  pool:
+    vmImage: macOS-latest
+  steps:
 
-- task: MSBuild@1
-  displayName: build Xamarin.Android app
-  inputs:
-    solution: XamarinAndroidApp/XamarinAndroidApp/XamarinAndroidApp.csproj
-    msbuildArguments: -restore -t:SignAndroidPackage -p:AndroidPackageFormat=apk -bl:$(System.DefaultWorkingDirectory)/artifacts/logs/XamarinAndroidApp.binlog
+  - powershell: |
+      & dotnet tool update --global boots --version 1.0.4.624
+      & boots https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/5343278/d17-0/6b0e6b265390832dcfb499e9e1e893c462548a30/xamarin.android-12.1.0.5.pkg
+    displayName: install Xamarin.Android
 
-- task: MSBuild@1
-  displayName: build Xamarin.Forms app
-  inputs:
-    solution: XamarinFormsApp/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
-    msbuildArguments: -restore -t:SignAndroidPackage -p:AndroidPackageFormat=apk -bl:$(System.DefaultWorkingDirectory)/artifacts/logs/XamarinFormsApp.binlog
+  - task: MSBuild@1
+    displayName: build Xamarin.Android app
+    inputs:
+      solution: XamarinAndroidApp/XamarinAndroidApp/XamarinAndroidApp.csproj
+      msbuildArguments: -restore -t:SignAndroidPackage -p:AndroidPackageFormat=apk -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinAndroidApp.binlog
 
-- task: CopyFiles@2
-  inputs:
-    contents: '**/*-Signed.apk'
-    targetFolder: artifacts/release
+  - task: MSBuild@1
+    displayName: build Xamarin.Forms app
+    inputs:
+      solution: XamarinFormsApp/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
+      msbuildArguments: -restore -t:SignAndroidPackage -p:AndroidPackageFormat=apk -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsApp.binlog
 
-- task: MSBuild@1
-  displayName: build Xamarin.Android app AOT
-  inputs:
-    solution: XamarinAndroidApp/XamarinAndroidApp/XamarinAndroidApp.csproj
-    msbuildArguments: -restore -t:Clean,SignAndroidPackage -p:AndroidPackageFormat=apk -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(System.DefaultWorkingDirectory)/artifacts/logs/XamarinAndroidApp-Aot.binlog
+  - task: CopyFiles@2
+    inputs:
+      contents: '**/*-Signed.apk'
+      targetFolder: $(Build.ArtifactStagingDirectory)/release
 
-- task: MSBuild@1
-  displayName: build Xamarin.Forms app AOT
-  inputs:
-    solution: XamarinFormsApp/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
-    msbuildArguments: -restore -t:Clean,SignAndroidPackage -p:AndroidPackageFormat=apk -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(System.DefaultWorkingDirectory)/artifacts/logs/XamarinFormsApp-Aot.binlog
+  - task: MSBuild@1
+    displayName: build Xamarin.Android app AOT
+    inputs:
+      solution: XamarinAndroidApp/XamarinAndroidApp/XamarinAndroidApp.csproj
+      msbuildArguments: -restore -t:Clean,SignAndroidPackage -p:AndroidPackageFormat=apk -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinAndroidApp-Aot.binlog
 
-- task: CopyFiles@2
-  inputs:
-    contents: '**/*-Signed.apk'
-    targetFolder: artifacts/release-aot
+  - task: MSBuild@1
+    displayName: build Xamarin.Forms app AOT
+    inputs:
+      solution: XamarinFormsApp/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
+      msbuildArguments: -restore -t:Clean,SignAndroidPackage -p:AndroidPackageFormat=apk -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsApp-Aot.binlog
 
-- task: PublishBuildArtifacts@1
-  displayName: upload artifacts
-  inputs:
-    artifactName: artifacts
-    targetPath: artifacts
-  condition: succeededOrFailed()
+  - task: CopyFiles@2
+    inputs:
+      contents: '**/*-Signed.apk'
+      targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
+
+  - task: PublishBuildArtifacts@1
+    displayName: upload artifacts
+    inputs:
+      artifactName: xamarin-artifacts
+    condition: succeededOrFailed()
+
+- job: MAUI
+  pool:
+    vmImage: macOS-latest
+  steps:
+
+  - task: UseDotNet@2
+    displayName: Use .NET 6
+    inputs:
+      version: 6.0.100
+
+  - powershell: |
+      & dotnet workload install maui android-aot --verbosity diag
+    displayName: install optional workloads
+
+  - powershell: |
+      & dotnet new android -o HelloAndroid
+      & dotnet new maui -o HelloMaui
+    displayName: dotnet new
+
+  - powershell: |
+      & dotnet build HelloAndroid/HelloAndroid.csproj -p:AndroidPackageFormat=apk -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid.binlog
+    displayName: build android
+
+  - powershell: |
+      & dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -p:AndroidPackageFormat=apk -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui.binlog
+    displayName: build android
+
+  - task: CopyFiles@2
+    inputs:
+      contents: '**/*-Signed.apk'
+      targetFolder: $(Build.ArtifactStagingDirectory)/release
+
+  - powershell: |
+      & dotnet build HelloAndroid/HelloAndroid.csproj -t:Rebuild -p:AndroidPackageFormat=apk -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid-Aot.binlog
+    displayName: build android
+
+  - powershell: |
+      & dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -t:Rebuild -p:AndroidPackageFormat=apk -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-Aot.binlog
+    displayName: build android
+
+  - task: CopyFiles@2
+    inputs:
+      contents: '**/*-Signed.apk'
+      targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
+
+  - task: PublishBuildArtifacts@1
+    displayName: upload artifacts
+    inputs:
+      artifactName: maui-artifacts
+    condition: succeededOrFailed()
