@@ -11,6 +11,11 @@ variables:
 
 steps:
 
+- powershell: |
+    & dotnet tool update --global boots --version 1.0.4.624
+    & boots https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/5343278/d17-0/6b0e6b265390832dcfb499e9e1e893c462548a30/xamarin.android-12.1.0.5.pkg
+  displayName: install Xamarin.Android
+
 - task: MSBuild@1
   displayName: build Xamarin.Android app
   inputs:
@@ -29,13 +34,13 @@ steps:
     targetFolder: artifacts/release
 
 - task: MSBuild@1
-  displayName: build Xamarin.Android app
+  displayName: build Xamarin.Android app AOT
   inputs:
     solution: XamarinAndroidApp/XamarinAndroidApp/XamarinAndroidApp.csproj
     msbuildArguments: -restore -t:Clean,SignAndroidPackage -p:AndroidPackageFormat=apk -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(System.DefaultWorkingDirectory)/artifacts/logs/XamarinAndroidApp-Aot.binlog
 
 - task: MSBuild@1
-  displayName: build Xamarin.Forms app
+  displayName: build Xamarin.Forms app AOT
   inputs:
     solution: XamarinFormsApp/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
     msbuildArguments: -restore -t:Clean,SignAndroidPackage -p:AndroidPackageFormat=apk -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(System.DefaultWorkingDirectory)/artifacts/logs/XamarinFormsApp-Aot.binlog
