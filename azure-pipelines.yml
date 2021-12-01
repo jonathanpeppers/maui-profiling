@@ -1,0 +1,53 @@
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: macOS-latest
+
+variables:
+  Configuration: Release
+
+steps:
+
+- task: MSBuild@1
+  displayName: build Xamarin.Android app
+  inputs:
+    solution: XamarinAndroidApp/XamarinAndroidApp/XamarinAndroidApp.csproj
+    msbuildArguments: -restore -t:SignAndroidPackage -p:AndroidPackageFormat=apk -bl:$(System.DefaultWorkingDirectory)/artifacts/logs/XamarinAndroidApp.binlog
+
+- task: MSBuild@1
+  displayName: build Xamarin.Forms app
+  inputs:
+    solution: XamarinFormsApp/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
+    msbuildArguments: -restore -t:SignAndroidPackage -p:AndroidPackageFormat=apk -bl:$(System.DefaultWorkingDirectory)/artifacts/logs/XamarinFormsApp.binlog
+
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*-Signed.apk'
+    targetFolder: artifacts/release
+
+- task: MSBuild@1
+  displayName: build Xamarin.Android app
+  inputs:
+    solution: XamarinAndroidApp/XamarinAndroidApp/XamarinAndroidApp.csproj
+    msbuildArguments: -restore -t:Clean,SignAndroidPackage -p:AndroidPackageFormat=apk -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(System.DefaultWorkingDirectory)/artifacts/logs/XamarinAndroidApp-Aot.binlog
+
+- task: MSBuild@1
+  displayName: build Xamarin.Forms app
+  inputs:
+    solution: XamarinFormsApp/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
+    msbuildArguments: -restore -t:Clean,SignAndroidPackage -p:AndroidPackageFormat=apk -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(System.DefaultWorkingDirectory)/artifacts/logs/XamarinFormsApp-Aot.binlog
+
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*-Signed.apk'
+    targetFolder: artifacts/release-aot
+
+- task: PublishBuildArtifacts@1
+  displayName: upload artifacts
+  inputs:
+    artifactName: artifacts
+    targetPath: artifacts
+  condition: succeededOrFailed()
