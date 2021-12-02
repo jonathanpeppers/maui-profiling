@@ -15,6 +15,7 @@ variables:
 jobs:
 
 - job: Xamarin
+  condition: false
   pool:
     vmImage: macOS-latest
   steps:
@@ -83,7 +84,7 @@ jobs:
     inputs:
       version: $(DotNet.Version)
 
-  - bash: dotnet workload install maui android-aot --verbosity diag
+  - bash: dotnet workload install maui android-aot --verbosity diag --from-rollback-file https://aka.ms/dotnet/maui/preview.11.json --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
     displayName: install optional workloads
 
   - bash: >
