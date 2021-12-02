@@ -89,7 +89,9 @@ jobs:
 
   - bash: >
       dotnet new android -o HelloAndroid &&
-      dotnet new maui -o HelloMaui
+      dotnet new maui -o HelloMaui &&
+      dotnet new nugetconfig -o HelloMaui &&
+      dotnet nuget add source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet6/nuget/v3/index.json --name dotnet6 --configfile HelloMaui/nuget.config
     displayName: dotnet new
 
   - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid.binlog
