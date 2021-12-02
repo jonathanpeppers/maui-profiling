@@ -1,0 +1,24 @@
+> .\scripts\profile.ps1 -package com.companyname.HelloMaui -activity crc64ec6bb0d0f3cda3b3.MainActivity
+Starting: Intent { cmp=com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+12-02 11:39:07.165  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity: +677ms
+12-02 11:39:10.403  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity: +663ms
+12-02 11:39:13.611  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity: +665ms
+12-02 11:39:16.900  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity: +742ms
+12-02 11:39:20.085  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity: +692ms
+12-02 11:39:23.247  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity: +674ms
+12-02 11:39:26.461  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity: +701ms
+12-02 11:39:29.614  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity: +681ms
+12-02 11:39:32.824  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity: +671ms
+12-02 11:39:36.013  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloMaui/crc64ec6bb0d0f3cda3b3.MainActivity: +673ms
+Average(ms): 683.9
+Std Err(ms): 7.42884767496129
+Std Dev(ms): 23.4920790433239

@@ -1,0 +1,24 @@
+> .\scripts\profile.ps1 -package com.companyname.xamarinandroidapp -activity crc6453d5cbd7c887ba8c.MainActivity
+Starting: Intent { cmp=com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity }
+12-02 11:21:56.536  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity: +309ms
+12-02 11:21:59.780  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity: +309ms
+12-02 11:22:02.975  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity: +308ms
+12-02 11:22:06.213  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity: +304ms
+12-02 11:22:09.387  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity: +301ms
+12-02 11:22:12.615  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity: +303ms
+12-02 11:22:15.851  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity: +307ms
+12-02 11:22:19.067  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity: +316ms
+12-02 11:22:22.270  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity: +300ms
+12-02 11:22:25.519  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinandroidapp/crc6453d5cbd7c887ba8c.MainActivity: +308ms
+Average(ms): 306.5
+Std Err(ms): 1.48511129399636
+Std Dev(ms): 4.69633426786846
