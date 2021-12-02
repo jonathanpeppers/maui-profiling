@@ -75,12 +75,11 @@ if (-not $adb)
 & adb shell settings put global window_animation_scale 0
 & adb shell settings put global transition_animation_scale 0
 & adb shell settings put global animator_duration_scale 0
-& adb shell am start -n "$package/$activity"
 
-for ($i=0; $i -le $iterations; $i++) {
-    Start-Sleep -Seconds $seconds
+for ($i=0; $i -lt $iterations; $i++) {
     & adb shell am force-stop $package
     & adb shell am start -n "$package/$activity"
+    Start-Sleep -Seconds $seconds
 }
 
 # Log message of the form:
