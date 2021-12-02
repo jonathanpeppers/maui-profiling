@@ -4,6 +4,8 @@ Repository for building MAUI apps over time using different versions -- for inst
 
 ## Results
 
+These numbers were measured with preinstalled apps with `scripts\profile.ps1` on a Pixel 5 device running Android 12.
+
 |   App    | Mode | Framework | Time(ms) |
 |--------- |------|-----------| --------:|
 | PoolMath |  JIT |   Xamarin |   2187.5 |
