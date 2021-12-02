@@ -23,9 +23,13 @@ If you don't easily know an apps package name & main activity:
 
 1. Or run:
 
-    > adb shell 'dumpsys window | grep mCurrentFocus'
-    mCurrentFocus=Window{f372400 u0 com.myapp.foo/crc64362beeb2c8180c73.MainActivity}
+```powershell
+> adb shell 'dumpsys window | grep mCurrentFocus'
+mCurrentFocus=Window{f372400 u0 com.myapp.foo/crc64362beeb2c8180c73.MainActivity}
+```
 
 Then you run the script such as:
 
-    > .\scripts\profile.ps1 -package com.myapp.foo -activity crc64362beeb2c8180c73.MainActivity
+```powershell
+> .\scripts\profile.ps1 -package com.myapp.foo -activity crc64362beeb2c8180c73.MainActivity
+```
