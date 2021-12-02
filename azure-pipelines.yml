@@ -15,6 +15,7 @@ variables:
 jobs:
 
 - job: Xamarin
+  condition: false
   pool:
     vmImage: macOS-latest
   steps:
@@ -95,12 +96,14 @@ jobs:
     inputs:
       version: $(DotNet.Version)
 
-  - bash: dotnet workload install maui android-aot --verbosity diag
+  - bash: dotnet workload install maui android-aot --verbosity diag --from-rollback-file https://aka.ms/dotnet/maui/preview.12.json --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
     displayName: install optional workloads
 
   - bash: >
       dotnet new android -o HelloAndroid &&
-      dotnet new maui -o HelloMaui
+      dotnet new maui -o HelloMaui &&
+      dotnet new nugetconfig -o HelloMaui &&
+      dotnet nuget add source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet6/nuget/v3/index.json --name dotnet6 --configfile HelloMaui/nuget.config
     displayName: dotnet new
 
   - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid.binlog
