@@ -1,0 +1,24 @@
+> .\scripts\profile.ps1 -package com.companyname.HelloAndroid -activity crc6490bfc84a0f5dff7a.MainActivity
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+12-02 12:09:42.580  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +285ms
+12-02 12:09:45.761  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +264ms
+12-02 12:09:49.011  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +265ms
+12-02 12:09:52.228  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +266ms
+12-02 12:09:55.493  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +273ms
+12-02 12:09:58.669  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +279ms
+12-02 12:10:01.873  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +253ms
+12-02 12:10:05.089  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +267ms
+12-02 12:10:08.281  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +271ms
+12-02 12:10:11.477  1741  1935 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +271ms
+Average(ms): 269.4
+Std Err(ms): 2.76566246835887
+Std Dev(ms): 8.7457926392574

@@ -1,0 +1,24 @@
+> .\scripts\profile.ps1 -package com.companyname.hellomaui -activity crc64ec6bb0d0f3cda3b3.MainActivity
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+12-02 12:22:10.100  1741  1935 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +692ms
+12-02 12:22:13.253  1741  1935 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +661ms
+12-02 12:22:16.472  1741  1935 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +666ms
+12-02 12:22:19.656  1741  1935 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +674ms
+12-02 12:22:22.869  1741  1935 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +688ms
+12-02 12:22:26.093  1741  1935 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +685ms
+12-02 12:22:29.294  1741  1935 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +678ms
+12-02 12:22:32.464  1741  1935 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +664ms
+12-02 12:22:35.701  1741  1935 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +694ms
+12-02 12:22:38.928  1741  1935 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +672ms
+Average(ms): 677.4
+Std Err(ms): 3.76887840669402
+Std Dev(ms): 11.9182399893795

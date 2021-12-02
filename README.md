@@ -12,10 +12,14 @@ These numbers were measured with preinstalled apps with `scripts\profile.ps1` on
 | XamarinAndroidApp  |  AOT |   Xamarin |    306.5 |
 | dotnet new android |  JIT |  MAUI P10 |    265.4 |
 | dotnet new android |  AOT |  MAUI P10 |    210.5 |
+| dotnet new android |  JIT |  MAUI P11 |    269.4 |
+| dotnet new android |  AOT |  MAUI P11 |    197.4 |
 | XamarinFormsApp    |  JIT |   Xamarin |   1369.5 |
 | XamarinFormsApp    |  AOT |   Xamarin |    817.7 |
 | dotnet new maui    |  JIT |  MAUI P10 |   1078.0 |
 | dotnet new maui    |  AOT |  MAUI P10 |    683.9 |
+| dotnet new maui    |  JIT |  MAUI P11 |   1072.6 |
+| dotnet new maui    |  AOT |  MAUI P11 |    677.4 |
 | PoolMath           |  JIT |   Xamarin |   2187.5 |
 | PoolMath           |  AOT |   Xamarin |   1609.6 |
 | PoolMath           |  JIT |  MAUI P11 |   3107.9 |
