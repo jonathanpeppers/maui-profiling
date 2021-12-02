@@ -91,6 +91,10 @@ if ($log.Count -eq 0)
 {
     Write-Error "No ActivityManager messages found"
 }
+if ($log.Count -ne $iterations)
+{
+    Write-Error "Expected $iterations ActivityManager messages, found $($log.Count)"
+}
 
 $sum = 0;
 [System.Collections.ArrayList] $times = @()
