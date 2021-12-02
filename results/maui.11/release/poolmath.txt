@@ -1,0 +1,24 @@
+> .\scripts\profile.ps1 -package com.troublefreepool.poolmathappmaui -activity crc64362beeb2c8180c73.MainActivity -seconds 5
+Starting: Intent { cmp=com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity }
+12-02 10:56:33.236  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity: +3s103ms
+12-02 10:56:38.484  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity: +3s88ms
+12-02 10:56:43.720  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity: +3s126ms
+12-02 10:56:48.876  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity: +3s72ms
+12-02 10:56:54.086  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity: +3s76ms
+12-02 10:56:59.367  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity: +3s140ms
+12-02 10:57:04.550  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity: +3s84ms
+12-02 10:57:09.766  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity: +3s95ms
+12-02 10:57:15.079  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity: +3s212ms
+12-02 10:57:20.154  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathappmaui/crc64362beeb2c8180c73.MainActivity: +3s83ms
+Average(ms): 3107.9
+Std Err(ms): 13.4490396187485
+Std Dev(ms): 42.5295975370878

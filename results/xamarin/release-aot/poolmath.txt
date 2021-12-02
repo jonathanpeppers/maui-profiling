@@ -1,0 +1,24 @@
+> .\scripts\profile.ps1 -package com.troublefreepool.poolmath -activity com.troublefreepool.poolmath.MainActivity
+Starting: Intent { cmp=com.troublefreepool.poolmath/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmath/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmath/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmath/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmath/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmath/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmath/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmath/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmath/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmath/.MainActivity }
+12-02 10:53:31.476  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmath/.MainActivity: +1s585ms
+12-02 10:53:34.710  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmath/.MainActivity: +1s610ms
+12-02 10:53:37.905  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmath/.MainActivity: +1s596ms
+12-02 10:53:41.096  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmath/.MainActivity: +1s598ms
+12-02 10:53:44.304  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmath/.MainActivity: +1s605ms
+12-02 10:53:47.540  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmath/.MainActivity: +1s628ms
+12-02 10:53:50.746  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmath/.MainActivity: +1s643ms
+12-02 10:53:53.917  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmath/.MainActivity: +1s608ms
+12-02 10:53:57.169  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmath/.MainActivity: +1s620ms
+12-02 10:54:00.363  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmath/.MainActivity: +1s603ms
+Average(ms): 1609.6
+Std Err(ms): 5.32749680640188
+Std Dev(ms): 16.847024135503
