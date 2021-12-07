@@ -1,0 +1,24 @@
+> .\scripts\profile.ps1 -package com.troublefreepool.poolmathmaui -activity com.troublefreepool.poolmathmaui.MainActivity
+Starting: Intent { cmp=com.troublefreepool.poolmathmaui/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathmaui/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathmaui/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathmaui/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathmaui/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathmaui/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathmaui/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathmaui/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathmaui/.MainActivity }
+Starting: Intent { cmp=com.troublefreepool.poolmathmaui/.MainActivity }
+12-07 16:13:42.985  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathmaui/.MainActivity: +2s467ms
+12-07 16:13:46.212  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathmaui/.MainActivity: +2s480ms
+12-07 16:13:49.374  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathmaui/.MainActivity: +2s446ms
+12-07 16:13:52.708  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathmaui/.MainActivity: +2s526ms
+12-07 16:13:55.863  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathmaui/.MainActivity: +2s479ms
+12-07 16:13:59.032  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathmaui/.MainActivity: +2s445ms
+12-07 16:14:02.301  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathmaui/.MainActivity: +2s496ms
+12-07 16:14:05.432  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathmaui/.MainActivity: +2s438ms
+12-07 16:14:08.671  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathmaui/.MainActivity: +2s471ms
+12-07 16:14:11.914  1741  1935 I ActivityTaskManager: Displayed com.troublefreepool.poolmathmaui/.MainActivity: +2s490ms
+Average(ms): 2473.8
+Std Err(ms): 8.48763806956918
+Std Dev(ms): 26.8402682549933
