@@ -14,6 +14,8 @@ These numbers were measured with preinstalled apps with `scripts\profile.ps1` on
 | dotnet new android |  AOT |  MAUI P10 |    210.5 |
 | dotnet new android |  JIT |  MAUI P11 |    269.4 |
 | dotnet new android |  AOT |  MAUI P11 |    197.4 |
+| XamarinFormsBlank  |  JIT |   Xamarin |    767.9 |
+| XamarinFormsBlank  |  AOT |   Xamarin |    498.6 |
 | XamarinFormsFlyout |  JIT |   Xamarin |   1369.5 |
 | XamarinFormsFlyout |  AOT |   Xamarin |    817.7 |
 | dotnet new maui    |  JIT |  MAUI P10 |   1078.0 |
