@@ -14,8 +14,8 @@ These numbers were measured with preinstalled apps with `scripts\profile.ps1` on
 | dotnet new android |  AOT |  MAUI P10 |    210.5 |
 | dotnet new android |  JIT |  MAUI P11 |    269.4 |
 | dotnet new android |  AOT |  MAUI P11 |    197.4 |
-| XamarinFormsApp    |  JIT |   Xamarin |   1369.5 |
-| XamarinFormsApp    |  AOT |   Xamarin |    817.7 |
+| XamarinFormsFlyout |  JIT |   Xamarin |   1369.5 |
+| XamarinFormsFlyout |  AOT |   Xamarin |    817.7 |
 | dotnet new maui    |  JIT |  MAUI P10 |   1078.0 |
 | dotnet new maui    |  AOT |  MAUI P10 |    683.9 |
 | dotnet new maui    |  JIT |  MAUI P11 |   1072.6 |
@@ -26,7 +26,7 @@ These numbers were measured with preinstalled apps with `scripts\profile.ps1` on
 | PoolMath           |  AOT |  MAUI P11 |   2473.8 |
 
 * `XamarinAndroidApp`: Xamarin.Android Single View Application template from VS 2022
-* `XamarinFormsApp`: Xamarin.Forms Flyout template from VS 2022
+* `XamarinFormsFlyout`: Xamarin.Forms Flyout template from VS 2022
 * `PoolMath`: @Redth's app
 * `dotnet new android`: literally run this command
 * `dotnet new maui`: literally run this command

@@ -36,10 +36,16 @@ jobs:
       msbuildArguments: -restore -t:SignAndroidPackage -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinAndroidApp.binlog
 
   - task: MSBuild@1
-    displayName: build Xamarin.Forms app
+    displayName: build Xamarin.Forms Flyout app
     inputs:
-      solution: XamarinFormsApp/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
-      msbuildArguments: -restore -t:SignAndroidPackage -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsApp.binlog
+      solution: XamarinFormsFlyout/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
+      msbuildArguments: -restore -t:SignAndroidPackage -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsFlyout.binlog
+
+  - task: MSBuild@1
+    displayName: build Xamarin.Forms Blank app
+    inputs:
+      solution: XamarinFormsBlank/XamarinFormsBlank/XamarinFormsBlank.Android/XamarinFormsBlank.Android.csproj
+      msbuildArguments: -restore -t:SignAndroidPackage -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsBlank.binlog
 
   - task: CopyFiles@2
     displayName: copy apks
@@ -52,13 +58,19 @@ jobs:
     displayName: build Xamarin.Android app AOT
     inputs:
       solution: XamarinAndroidApp/XamarinAndroidApp/XamarinAndroidApp.csproj
-      msbuildArguments: -restore -t:Clean,SignAndroidPackage -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinAndroidApp-Aot.binlog
+      msbuildArguments: -t:Clean,SignAndroidPackage -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinAndroidApp-Aot.binlog
 
   - task: MSBuild@1
-    displayName: build Xamarin.Forms app AOT
+    displayName: build Xamarin.Forms Flyout app AOT
     inputs:
-      solution: XamarinFormsApp/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
-      msbuildArguments: -restore -t:Clean,SignAndroidPackage -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsApp-Aot.binlog
+      solution: XamarinFormsFlyout/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
+      msbuildArguments: -t:Clean,SignAndroidPackage -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsFlyout-Aot.binlog
+
+  - task: MSBuild@1
+    displayName: build Xamarin.Forms Blank app AOT
+    inputs:
+      solution: XamarinFormsBlank/XamarinFormsBlank/XamarinFormsBlank.Android/XamarinFormsBlank.Android.csproj
+      msbuildArguments: -t:Clean,SignAndroidPackage -p:AotAssemblies=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsFlyout-Aot.binlog
 
   - task: CopyFiles@2
     displayName: copy apks
