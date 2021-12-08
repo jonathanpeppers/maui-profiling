@@ -1,0 +1,24 @@
+> .\scripts\profile.ps1 -package com.companyname.xamarinformsblank -activity crc64c67bdf7aaa6c6840.MainActivity
+Starting: Intent { cmp=com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity }
+Starting: Intent { cmp=com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity }
+12-08 14:26:10.809  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity: +507ms
+12-08 14:26:14.005  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity: +505ms
+12-08 14:26:17.174  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity: +465ms
+12-08 14:26:20.354  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity: +476ms
+12-08 14:26:23.590  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity: +509ms
+12-08 14:26:26.753  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity: +501ms
+12-08 14:26:29.954  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity: +498ms
+12-08 14:26:33.170  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity: +528ms
+12-08 14:26:36.354  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity: +506ms
+12-08 14:26:39.534  1741  1935 I ActivityTaskManager: Displayed com.companyname.xamarinformsblank/crc64c67bdf7aaa6c6840.MainActivity: +491ms
+Average(ms): 498.6
+Std Err(ms): 5.61980624418869
+Std Dev(ms): 17.7713877404727
