@@ -1,0 +1,9 @@
+{
+  "microsoft.net.sdk.android": "31.0.200-preview.12.2",
+  "microsoft.net.sdk.ios": "15.2.200-preview.12.1",
+  "microsoft.net.sdk.maccatalyst": "15.2.200-preview.12.1",
+  "microsoft.net.sdk.macos": "12.1.200-preview.12.1",
+  "microsoft.net.sdk.maui": "6.0.200-preview.12.2441",
+  "microsoft.net.sdk.tvos": "15.2.200-preview.12.1",
+  "microsoft.net.workload.mono.toolchain": "6.0.2-mauipre.1.22054.8"
+}
