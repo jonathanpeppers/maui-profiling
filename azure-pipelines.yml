@@ -52,7 +52,10 @@ jobs:
   - task: CopyFiles@2
     displayName: copy apks
     inputs:
-      contents: '**/*-Signed.apk'
+      contents: |
+        XamarinAndroidApp/**/*-Signed.apk
+        XamarinFormsFlyout/**/*-Signed.apk
+        XamarinFormsBlank/**/*-Signed.apk
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release
 
@@ -77,7 +80,10 @@ jobs:
   - task: CopyFiles@2
     displayName: copy apks
     inputs:
-      contents: '**/*-Signed.apk'
+      contents: |
+        XamarinAndroidApp/**/*-Signed.apk
+        XamarinFormsFlyout/**/*-Signed.apk
+        XamarinFormsBlank/**/*-Signed.apk
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
 
@@ -121,9 +127,26 @@ jobs:
   - task: CopyFiles@2
     displayName: copy apks
     inputs:
-      contents: '**/*-Signed.apk'
+      contents: |
+        HelloAndroid/**/*-Signed.apk
+        HelloMaui/**/*-Signed.apk
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release
+
+  - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -t:Rebuild -p:UseInterpreter=true -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid-Interp.binlog
+    displayName: build android interp
+
+  - bash: dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -r $(RID) -t:Rebuild -p:UseInterpreter=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-Interp.binlog
+    displayName: build maui interp
+
+  - task: CopyFiles@2
+    displayName: copy apks
+    inputs:
+      contents: |
+        HelloAndroid/**/*-Signed.apk
+        HelloMaui/**/*-Signed.apk
+      flattenFolders: true
+      targetFolder: $(Build.ArtifactStagingDirectory)/release-interp
 
   - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid-Aot.binlog
     displayName: build android AOT
@@ -134,7 +157,9 @@ jobs:
   - task: CopyFiles@2
     displayName: copy apks
     inputs:
-      contents: '**/*-Signed.apk'
+      contents: |
+        HelloAndroid/**/*-Signed.apk
+        HelloMaui/**/*-Signed.apk
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
 

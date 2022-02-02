@@ -6,32 +6,41 @@ Repository for building MAUI apps over time using different versions -- for inst
 
 These numbers were measured with preinstalled apps with `scripts\profile.ps1` on a Pixel 5 device running Android 12.
 
-| Application        | Mode | Framework | Time(ms) |
-|------------------- |------|-----------| --------:|
-| XamarinAndroidApp  |  JIT |   Xamarin |    334.1 |
-| XamarinAndroidApp  |  AOT |   Xamarin |    306.5 |
-| dotnet new android |  JIT |  MAUI P10 |    265.4 |
-| dotnet new android |  AOT |  MAUI P10 |    210.5 |
-| dotnet new android |  JIT |  MAUI P11 |    269.4 |
-| dotnet new android |  AOT |  MAUI P11 |    197.4 |
-| XamarinFormsBlank  |  JIT |   Xamarin |    767.9 |
-| XamarinFormsBlank  |  AOT |   Xamarin |    498.6 |
-| XamarinFormsFlyout |  JIT |   Xamarin |   1369.5 |
-| XamarinFormsFlyout |  AOT |   Xamarin |    817.7 |
-| dotnet new maui    |  JIT |  MAUI P10 |   1078.0 |
-| dotnet new maui    |  AOT |  MAUI P10 |    683.9 |
-| dotnet new maui    |  JIT |  MAUI P11 |   1072.6 |
-| dotnet new maui    |  AOT |  MAUI P11 |    677.4 |
-| PoolMath           |  JIT |   Xamarin |   2187.5 |
-| PoolMath           |  AOT |   Xamarin |   1609.6 |
-| PoolMath           |  JIT |  MAUI P11 |   3012.2 |
-| PoolMath           |  AOT |  MAUI P11 |   2473.8 |
+| Application        | Framework | JIT Time(ms) | Profiled AOT Time(ms) |
+|------------------- |-----------| ------------:| ---------------------:|
+| XamarinAndroidApp  |   Xamarin |        334.1 |                 306.5 |
+| dotnet new android |  MAUI P10 |        265.4 |                 210.5 |
+| dotnet new android |  MAUI P11 |        269.4 |                 197.4 |
+| dotnet new android |  MAUI P12 |        260.9 |                 184.5 |
+| XamarinFormsBlank  |   Xamarin |        767.9 |                 498.6 |
+| XamarinFormsFlyout |   Xamarin |       1369.5 |                 817.7 |
+| dotnet new maui    |  MAUI P10 |       1078.0 |                 683.9 |
+| dotnet new maui    |  MAUI P11 |       1072.6 |                 677.4 |
+| dotnet new maui    |  MAUI P12 |       1013.8 |                 648.9 |
 
 * `XamarinAndroidApp`: Xamarin.Android Single View Application template from VS 2022
 * `XamarinFormsFlyout`: Xamarin.Forms Flyout template from VS 2022
-* `PoolMath`: @Redth's app
 * `dotnet new android`: literally run this command
 * `dotnet new maui`: literally run this command
+
+### PoolMath
+
+This is @Redth's app, which is not open source. Original numbers [here][poolmath].
+
+Comparing numbers on a Google Pixel 4 (note that above numbers are Pixel 5).
+
+|     Framework | JIT Time(ms) | Profiled AOT Time(ms) | Full AOT Time(ms) |
+|---------------| ------------:| ---------------------:| -----------------:|
+| Xamarin.Forms |       1892.7 |                 967.3 |             902.6 |
+|      MAUI P13 |       1807.9 |                1245.8 |            1260.0 |
+
+We think this app runs enough C# code on startup that recording custom
+AOT profile would yield the best results. However, this is not
+implemented yet in .NET 6. See [dotnet/runtime#56989][issue56989] for
+tracking on this feature.
+
+[poolmath]: https://gist.github.com/Redth/f2e5b2d6e952380f4619912d42b87ad2
+[issue56989]: https://github.com/dotnet/runtime/issues/56989
 
 ## FAQ
 
