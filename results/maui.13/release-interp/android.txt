@@ -1,0 +1,13 @@
+02-02 16:36:15.639  1867  2226 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +220ms
+02-02 16:36:16.843  1867  2226 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +225ms
+02-02 16:36:18.043  1867  2226 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +233ms
+02-02 16:36:19.256  1867  2226 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +222ms
+02-02 16:36:20.425  1867  2226 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +222ms
+02-02 16:36:21.659  1867  2226 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +245ms
+02-02 16:36:22.883  1867  2226 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +218ms
+02-02 16:36:24.110  1867  2226 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +210ms
+02-02 16:36:25.387  1867  2226 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +234ms
+02-02 16:36:26.628  1867  2226 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +245ms
+Average(ms): 227.4
+Std Err(ms): 3.65817197821839
+Std Dev(ms): 11.568155523774
