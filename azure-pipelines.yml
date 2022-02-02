@@ -50,7 +50,10 @@ jobs:
   - task: CopyFiles@2
     displayName: copy apks
     inputs:
-      contents: '**/*-Signed.apk'
+      contents: |
+        XamarinAndroidApp/**/*-Signed.apk
+        XamarinFormsFlyout/**/*-Signed.apk
+        XamarinFormsBlank/**/*-Signed.apk
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release
 
@@ -75,7 +78,10 @@ jobs:
   - task: CopyFiles@2
     displayName: copy apks
     inputs:
-      contents: '**/*-Signed.apk'
+      contents: |
+        XamarinAndroidApp/**/*-Signed.apk
+        XamarinFormsFlyout/**/*-Signed.apk
+        XamarinFormsBlank/**/*-Signed.apk
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
 
@@ -114,7 +120,9 @@ jobs:
   - task: CopyFiles@2
     displayName: copy apks
     inputs:
-      contents: '**/*-Signed.apk'
+      contents: |
+        HelloAndroid/**/*-Signed.apk
+        HelloMaui/**/*-Signed.apk
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release
 
@@ -127,7 +135,9 @@ jobs:
   - task: CopyFiles@2
     displayName: copy apks
     inputs:
-      contents: '**/*-Signed.apk'
+      contents: |
+        HelloAndroid/**/*-Signed.apk
+        HelloMaui/**/*-Signed.apk
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release-interp
 
@@ -140,7 +150,9 @@ jobs:
   - task: CopyFiles@2
     displayName: copy apks
     inputs:
-      contents: '**/*-Signed.apk'
+      contents: |
+        HelloAndroid/**/*-Signed.apk
+        HelloMaui/**/*-Signed.apk
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
 
