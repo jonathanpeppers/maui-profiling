@@ -6,22 +6,27 @@ Repository for building MAUI apps over time using different versions -- for inst
 
 These numbers were measured with preinstalled apps with `scripts\profile.ps1` on a Pixel 5 device running Android 12.
 
-| Application        | Framework | JIT Time(ms) | Profiled AOT Time(ms) |
-|------------------- |-----------| ------------:| ---------------------:|
-| XamarinAndroidApp  |   Xamarin |        334.1 |                 306.5 |
-| dotnet new android |  MAUI P10 |        265.4 |                 210.5 |
-| dotnet new android |  MAUI P11 |        269.4 |                 197.4 |
-| dotnet new android |  MAUI P12 |        260.9 |                 184.5 |
-| XamarinFormsBlank  |   Xamarin |        767.9 |                 498.6 |
-| XamarinFormsFlyout |   Xamarin |       1369.5 |                 817.7 |
-| dotnet new maui    |  MAUI P10 |       1078.0 |                 683.9 |
-| dotnet new maui    |  MAUI P11 |       1072.6 |                 677.4 |
-| dotnet new maui    |  MAUI P12 |       1013.8 |                 648.9 |
+| Application        | Framework | JIT Time(ms) | Interpreter Time(ms) | Profiled AOT Time(ms) |
+|------------------- |-----------| ------------:| --------------------:| ---------------------:|
+| XamarinAndroidApp  |   Xamarin |        334.1 |                    - |                 306.5 |
+| dotnet new android |  MAUI P10 |        265.4 |                    - |                 210.5 |
+| dotnet new android |  MAUI P11 |        269.4 |                236.4 |                 197.4 |
+| dotnet new android |  MAUI P12 |        260.9 |                235.2 |                 184.5 |
+| XamarinFormsBlank  |   Xamarin |        767.9 |                    - |                 498.6 |
+| XamarinFormsFlyout |   Xamarin |       1369.5 |                    - |                 817.7 |
+| dotnet new maui    |  MAUI P10 |       1078.0 |                    - |                 683.9 |
+| dotnet new maui    |  MAUI P11 |       1072.6 |                867.9 |                 677.4 |
+| dotnet new maui    |  MAUI P12 |       1013.8 |                860.7 |                 648.9 |
 
 * `XamarinAndroidApp`: Xamarin.Android Single View Application template from VS 2022
 * `XamarinFormsFlyout`: Xamarin.Forms Flyout template from VS 2022
 * `dotnet new android`: literally run this command
 * `dotnet new maui`: literally run this command
+
+In .NET 6, a project with `-p:UseInterpreter=true` includes
+`libmono-component-hot_reload.so`. I recorded some startup times for
+this, mainly as an experiment. This might be a view into what a
+tiered-JIT could look like?
 
 ### PoolMath
 
