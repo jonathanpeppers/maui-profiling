@@ -6,30 +6,19 @@ Repository for building MAUI apps over time using different versions -- for inst
 
 These numbers were measured with preinstalled apps with `scripts\profile.ps1` on a Pixel 5 device running Android 12.
 
-| Application        | Mode | Framework | Time(ms) |
-|------------------- |------|-----------| --------:|
-| XamarinAndroidApp  |  JIT |   Xamarin |    334.1 |
-| XamarinAndroidApp  |  AOT |   Xamarin |    306.5 |
-| dotnet new android |  JIT |  MAUI P10 |    265.4 |
-| dotnet new android |  AOT |  MAUI P10 |    210.5 |
-| dotnet new android |  JIT |  MAUI P11 |    269.4 |
-| dotnet new android |  AOT |  MAUI P11 |    197.4 |
-| dotnet new android |  JIT |  MAUI P12 |    260.9 |
-| dotnet new android |  AOT |  MAUI P12 |    184.5 |
-| XamarinFormsBlank  |  JIT |   Xamarin |    767.9 |
-| XamarinFormsBlank  |  AOT |   Xamarin |    498.6 |
-| XamarinFormsFlyout |  JIT |   Xamarin |   1369.5 |
-| XamarinFormsFlyout |  AOT |   Xamarin |    817.7 |
-| dotnet new maui    |  JIT |  MAUI P10 |   1078.0 |
-| dotnet new maui    |  AOT |  MAUI P10 |    683.9 |
-| dotnet new maui    |  JIT |  MAUI P11 |   1072.6 |
-| dotnet new maui    |  AOT |  MAUI P11 |    677.4 |
-| dotnet new maui    |  JIT |  MAUI P12 |   1013.8 |
-| dotnet new maui    |  AOT |  MAUI P12 |    648.9 |
-| PoolMath           |  JIT |   Xamarin |   2187.5 |
-| PoolMath           |  AOT |   Xamarin |   1609.6 |
-| PoolMath           |  JIT |  MAUI P11 |   3012.2 |
-| PoolMath           |  AOT |  MAUI P11 |   2473.8 |
+| Application        | Framework | JIT Time(ms) | AOT Time(ms) |
+|------------------- |-----------| ------------:| ------------:|
+| XamarinAndroidApp  |   Xamarin |        334.1 |        306.5 |
+| dotnet new android |  MAUI P10 |        265.4 |        210.5 |
+| dotnet new android |  MAUI P11 |        269.4 |        197.4 |
+| dotnet new android |  MAUI P12 |        260.9 |        184.5 |
+| XamarinFormsBlank  |   Xamarin |        767.9 |        498.6 |
+| XamarinFormsFlyout |   Xamarin |       1369.5 |        817.7 |
+| dotnet new maui    |  MAUI P10 |       1078.0 |        683.9 |
+| dotnet new maui    |  MAUI P11 |       1072.6 |        677.4 |
+| dotnet new maui    |  MAUI P12 |       1013.8 |        648.9 |
+| PoolMath           |   Xamarin |       2187.5 |       1609.6 |
+| PoolMath           |  MAUI P11 |       3012.2 |       2473.8 |
 
 * `XamarinAndroidApp`: Xamarin.Android Single View Application template from VS 2022
 * `XamarinFormsFlyout`: Xamarin.Forms Flyout template from VS 2022
