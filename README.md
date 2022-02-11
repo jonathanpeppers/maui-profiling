@@ -69,3 +69,22 @@ Then you run the script such as:
 ```powershell
 > .\scripts\profile.ps1 -package com.myapp.foo -activity crc64362beeb2c8180c73.MainActivity
 ```
+
+## Register ADB with Powershell
+
+You may need to create a powershell alias for `adb`:
+
+```powershell
+Set-Alias adb "${env:ProgramFiles(x86)}\Android\android-sdk\platform-tools\adb.exe"
+```
+
+Or you can add the folder containing `adb.exe` to your `%PATH%`:
+
+```powershell
+if ($env:Path -NotMatch "Android\\android-sdk\\platform")
+{
+    write-host "Adding Android SDK Platform tools to path"
+    $env:Path += ";${env:ProgramFiles(x86)}\Android\android-sdk\platform-tools"
+}
+```
+(Or use the Windows environment variable menu)
