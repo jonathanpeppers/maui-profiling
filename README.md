@@ -13,12 +13,14 @@ These numbers were measured with preinstalled apps with `scripts\profile.ps1` on
 | dotnet new android |  MAUI P11 |        269.4 |                236.4 |                 197.4 |
 | dotnet new android |  MAUI P12 |        260.9 |                235.2 |                 184.5 |
 | dotnet new android |  MAUI P13 |        268.2 |                227.4 |                 198.4 |
+| dotnet new android |  MAUI P14 |        244.1 |                210.1 |                 165.5 |
 | XamarinFormsBlank  |   Xamarin |        767.9 |                    - |                 498.6 |
 | XamarinFormsFlyout |   Xamarin |       1369.5 |                    - |                 817.7 |
 | dotnet new maui    |  MAUI P10 |       1078.0 |                    - |                 683.9 |
 | dotnet new maui    |  MAUI P11 |       1072.6 |                867.9 |                 677.4 |
 | dotnet new maui    |  MAUI P12 |       1013.8 |                860.7 |                 648.9 |
 | dotnet new maui    |  MAUI P13 |       1063.1 |                864.4 |                 576.4 |
+| dotnet new maui    |  MAUI P14 |        887.6 |                717.2 |                 469.9 |
 
 * `XamarinAndroidApp`: Xamarin.Android Single View Application template from VS 2022
 * `XamarinFormsFlyout`: Xamarin.Forms Flyout template from VS 2022
