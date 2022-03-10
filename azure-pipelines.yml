@@ -119,12 +119,12 @@ jobs:
       dotnet nuget add source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet6/nuget/v3/index.json --name dotnet6 --configfile HelloMaui/nuget.config
     displayName: dotnet new
 
-  - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid.binlog
+  - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -p:RunAOTCompilation=false -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid.binlog
     displayName: build android
 
   - bash: >
       dotnet restore HelloMaui/HelloMaui.csproj -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-restore.binlog &&
-      dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -r $(RID) --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui.binlog
+      dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -r $(RID) -p:RunAOTCompilation=false --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui.binlog
     displayName: build maui
 
   - task: CopyFiles@2
@@ -136,10 +136,10 @@ jobs:
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release
 
-  - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -t:Rebuild -p:UseInterpreter=true -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid-Interp.binlog
+  - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -t:Rebuild -p:UseInterpreter=true -p:RunAOTCompilation=false -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid-Interp.binlog
     displayName: build android interp
 
-  - bash: dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -r $(RID) -t:Rebuild -p:UseInterpreter=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-Interp.binlog
+  - bash: dotnet build HelloMaui/HelloMaui.csproj -f net6.0-android -r $(RID) -t:Rebuild -p:UseInterpreter=true -p:RunAOTCompilation=false --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-Interp.binlog
     displayName: build maui interp
 
   - task: CopyFiles@2
