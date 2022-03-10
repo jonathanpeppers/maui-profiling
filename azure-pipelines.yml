@@ -8,13 +8,15 @@ variables:
   AndroidSupportedAbis: arm64-v8a
   AndroidPackageFormat: apk
   RID: android-arm64
-  DotNet.Version: 6.0.100
+  DotNet.Version: 6.0.200
+  DotNet.Root: /usr/local/share/dotnet/
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
 
 jobs:
 
 - job: Xamarin
+  condition: false
   pool:
     vmImage: macOS-latest
   steps:
@@ -96,17 +98,22 @@ jobs:
     vmImage: macOS-latest
   steps:
 
-  - task: UseDotNet@2
-    displayName: Use .NET 6
-    inputs:
-      version: $(DotNet.Version)
+  - bash: >
+      export PATH="$(DotNet.Root):$PATH" &&
+      curl -L https://dot.net/v1/dotnet-install.sh > dotnet-install.sh &&
+      sh dotnet-install.sh --version $(DotNet.Version) --install-dir $(DotNet.Root) --azure-feed https://dotnetbuilds.blob.core.windows.net/public --verbose &&
+      dotnet --list-sdks &&
+      echo "##vso[task.setvariable variable=PATH]$PATH"
+    displayName: install .NET $(DotNet.Version)
 
-  - bash: dotnet workload install maui android-aot --verbosity diag
+  - bash: dotnet workload install maui --verbosity diag --from-rollback-file https://aka.ms/dotnet/maui/preview.14.json --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
     displayName: install optional workloads
 
   - bash: >
       dotnet new android -o HelloAndroid &&
-      dotnet new maui -o HelloMaui
+      dotnet new maui -o HelloMaui &&
+      dotnet new nugetconfig -o HelloMaui &&
+      dotnet nuget add source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet6/nuget/v3/index.json --name dotnet6 --configfile HelloMaui/nuget.config
     displayName: dotnet new
 
   - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid.binlog
