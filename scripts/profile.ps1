@@ -24,11 +24,6 @@ is needed to launch or restart the app.
 The full name of the main Activity, found in obj/**/android/AndroidManifest.xml.
 This value is needed to launch or restart the app.
 
-.PARAMETER seconds
-
-The number of seconds to wait between each app launch. Defaults to 3,
-but you may need to increase for larger apps.
-
 .PARAMETER iterations
 
 The number of times to launch the app for profiling. Defaults to 10.
@@ -65,9 +60,6 @@ if (-not $adb)
     }
 }
 
-# We need a large logcat buffer
-& adb logcat -G 15M
-& adb logcat -c
 # Clear some properties, so we don't accidentally hurt startup perf
 & adb shell setprop debug.mono.log 0
 & adb shell setprop debug.mono.profile 0
@@ -76,10 +68,19 @@ if (-not $adb)
 & adb shell settings put global transition_animation_scale 0
 & adb shell settings put global animator_duration_scale 0
 
+# Do an initial launch and leave the app on screen
+& adb shell am force-stop $package
+& adb shell am start -n "$package/$activity" -W
+Write-Host "Keeping the app on screen for 10 seconds..."
+Start-Sleep -Seconds 10
+
+# We need a large logcat buffer
+& adb logcat -G 15M
+& adb logcat -c
 for ($i=0; $i -lt $iterations; $i++) {
     & adb shell am force-stop $package
-    & adb shell am start -n "$package/$activity"
-    Start-Sleep -Seconds $seconds
+    Start-Sleep -Seconds 1
+    & adb shell am start -n "$package/$activity" -W
 }
 
 # Log message of the form:
