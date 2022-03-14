@@ -43,7 +43,6 @@ param
     [Parameter(Mandatory=$true)]
     [string] $activity,
     [string] $adb,
-    [int] $seconds = 3,
     [int] $iterations = 10
 )
 
