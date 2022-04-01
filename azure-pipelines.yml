@@ -101,7 +101,7 @@ jobs:
     inputs:
       version: $(DotNet.Version)
 
-  - bash: dotnet workload install maui android-aot --verbosity diag
+  - bash: dotnet workload install maui --verbosity diag
     displayName: install optional workloads
 
   - bash: >
