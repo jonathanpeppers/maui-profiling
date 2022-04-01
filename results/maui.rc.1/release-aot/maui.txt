@@ -1,0 +1,92 @@
+> .\scripts\profile.ps1 -package com.companyname.hellomaui -activity crc64ec6bb0d0f3cda3b3.MainActivity
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity
+TotalTime: 592
+WaitTime: 595
+Complete
+Keeping the app on screen for 10 seconds...
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity
+TotalTime: 531
+WaitTime: 533
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity
+TotalTime: 531
+WaitTime: 533
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity
+TotalTime: 541
+WaitTime: 542
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity
+TotalTime: 517
+WaitTime: 520
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity
+TotalTime: 545
+WaitTime: 547
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity
+TotalTime: 535
+WaitTime: 540
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity
+TotalTime: 528
+WaitTime: 530
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity
+TotalTime: 524
+WaitTime: 527
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity
+TotalTime: 541
+WaitTime: 543
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity
+TotalTime: 539
+WaitTime: 548
+Complete
+04-01 14:56:06.543  1939  2254 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +531ms
+04-01 14:56:08.292  1939  2254 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +531ms
+04-01 14:56:10.033  1939  2254 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +541ms
+04-01 14:56:11.728  1939  2254 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +517ms
+04-01 14:56:13.450  1939  2254 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +545ms
+04-01 14:56:15.206  1939  2254 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +535ms
+04-01 14:56:16.924  1939  2254 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +528ms
+04-01 14:56:18.607  1939  2254 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +524ms
+04-01 14:56:20.335  1939  2254 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +541ms
+04-01 14:56:22.081  1939  2254 I ActivityTaskManager: Displayed com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity: +539ms
+Average(ms): 533.2
+Std Err(ms): 2.75196899207337
+Std Dev(ms): 8.70249006510972
