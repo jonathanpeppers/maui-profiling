@@ -110,8 +110,7 @@ jobs:
     displayName: install optional workloads
 
   - bash: >
-      dotnet new android -o HelloAndroid &&
-      dotnet new maui -o HelloMaui
+      dotnet new android -o HelloAndroid
     displayName: dotnet new
 
   - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -p:RunAOTCompilation=false -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid.binlog
