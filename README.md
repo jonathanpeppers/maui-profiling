@@ -44,25 +44,6 @@ In .NET 6, a project with `-p:UseInterpreter=true` includes
 this, mainly as an experiment. This might be a view into what a
 tiered-JIT could look like?
 
-### PoolMath
-
-This is @Redth's app, which is not open source. Original numbers [here][poolmath].
-
-Comparing numbers on a Google Pixel 4 (note that above numbers are Pixel 5).
-
-|     Framework | JIT Time(ms) | Profiled AOT Time(ms) | Full AOT Time(ms) |
-|---------------| ------------:| ---------------------:| -----------------:|
-| Xamarin.Forms |       1892.7 |                 967.3 |             902.6 |
-|      MAUI P13 |       1807.9 |                1245.8 |            1260.0 |
-
-We think this app runs enough C# code on startup that recording custom
-AOT profile would yield the best results. However, this is not
-implemented yet in .NET 6. See [dotnet/runtime#56989][issue56989] for
-tracking on this feature.
-
-[poolmath]: https://gist.github.com/Redth/f2e5b2d6e952380f4619912d42b87ad2
-[issue56989]: https://github.com/dotnet/runtime/issues/56989
-
 ## FAQ
 
 How to use `scripts\profile.ps1`?
