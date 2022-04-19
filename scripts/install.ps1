@@ -19,6 +19,7 @@ if (-not $adb)
 }
 
 $package = [System.IO.Path]::GetFileNameWithoutExtension($apk)
+$package = $package.Replace(".old", "")
 $package = $package.Replace("-Signed", "")
 
 Write-Host "adb uninstall $package"
