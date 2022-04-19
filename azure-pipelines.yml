@@ -95,6 +95,8 @@ jobs:
   pool:
     vmImage: macOS-latest
   steps:
+  - checkout: self
+    submodules: true
 
   - task: UseDotNet@2
     displayName: Use .NET 6
