@@ -22,6 +22,7 @@ These numbers were measured with preinstalled apps with `scripts\profile.ps1` on
 | dotnet new maui    |  MAUI P12 |       1013.8 |                860.7 |                 648.9 |
 | dotnet new maui    |  MAUI P13 |       1063.1 |                864.4 |                 576.4 |
 | dotnet new maui    |  MAUI P14 |        887.6 |                717.2 |                 469.9 |
+| .NET Podcast       |  MAUI P14 |       1564.4 |               1177.5 |                1027.7 |
 | dotnet new maui    |  MAUI RC1 |       1278.9 |                933.4 |                 533.2 |
 | dotnet new maui**  |  MAUI RC1 |        824.1 |                664.1 |                 437.1 |
 
@@ -35,6 +36,7 @@ comparison between past releases._
 * `XamarinFormsFlyout`: Xamarin.Forms Flyout template from VS 2022
 * `dotnet new android`: literally run this command
 * `dotnet new maui`: literally run this command
+* [.NET Podcast](https://github.com/microsoft/dotnet-podcasts)
 
 In .NET 6, a project with `-p:UseInterpreter=true` includes
 `libmono-component-hot_reload.so`. I recorded some startup times for
