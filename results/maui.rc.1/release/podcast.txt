@@ -1,0 +1,92 @@
+> .\scripts\profile.ps1 -package com.Microsoft.NetConf2021.Maui -activity crc64b93ba739210fe662.MainActivity
+Starting: Intent { cmp=com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity
+TotalTime: 1538
+WaitTime: 1540
+Complete
+Keeping the app on screen for 10 seconds...
+Starting: Intent { cmp=com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity
+TotalTime: 1483
+WaitTime: 1485
+Complete
+Starting: Intent { cmp=com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity
+TotalTime: 1480
+WaitTime: 1482
+Complete
+Starting: Intent { cmp=com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity
+TotalTime: 1447
+WaitTime: 1448
+Complete
+Starting: Intent { cmp=com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity
+TotalTime: 1505
+WaitTime: 1510
+Complete
+Starting: Intent { cmp=com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity
+TotalTime: 1456
+WaitTime: 1458
+Complete
+Starting: Intent { cmp=com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity
+TotalTime: 1483
+WaitTime: 1485
+Complete
+Starting: Intent { cmp=com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity
+TotalTime: 1453
+WaitTime: 1455
+Complete
+Starting: Intent { cmp=com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity
+TotalTime: 1465
+WaitTime: 1469
+Complete
+Starting: Intent { cmp=com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity
+TotalTime: 1476
+WaitTime: 1477
+Complete
+Starting: Intent { cmp=com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity
+TotalTime: 1464
+WaitTime: 1466
+Complete
+04-19 08:54:03.687  1820  1981 I ActivityTaskManager: Displayed com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity: +1s483ms
+04-19 08:54:06.356  1820  1981 I ActivityTaskManager: Displayed com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity: +1s480ms
+04-19 08:54:08.995  1820  1981 I ActivityTaskManager: Displayed com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity: +1s447ms
+04-19 08:54:11.694  1820  1981 I ActivityTaskManager: Displayed com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity: +1s505ms
+04-19 08:54:14.353  1820  1981 I ActivityTaskManager: Displayed com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity: +1s456ms
+04-19 08:54:17.024  1820  1981 I ActivityTaskManager: Displayed com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity: +1s483ms
+04-19 08:54:19.645  1820  1981 I ActivityTaskManager: Displayed com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity: +1s453ms
+04-19 08:54:22.328  1820  1981 I ActivityTaskManager: Displayed com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity: +1s465ms
+04-19 08:54:25.019  1820  1981 I ActivityTaskManager: Displayed com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity: +1s476ms
+04-19 08:54:27.652  1820  1981 I ActivityTaskManager: Displayed com.Microsoft.NetConf2021.Maui/crc64b93ba739210fe662.MainActivity: +1s464ms
+Average(ms): 1471.2
+Std Err(ms): 5.53734794122802
+Std Dev(ms): 17.5106316911247

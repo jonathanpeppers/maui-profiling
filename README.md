@@ -25,6 +25,7 @@ These numbers were measured with preinstalled apps with `scripts\profile.ps1` on
 | .NET Podcast       |  MAUI P14 |       1564.4 |               1177.5 |                1027.7 |
 | dotnet new maui    |  MAUI RC1 |       1278.9 |                933.4 |                 533.2 |
 | dotnet new maui**  |  MAUI RC1 |        824.1 |                664.1 |                 437.1 |
+| .NET Podcast       |  MAUI RC1 |       1471.2 |               1139.9 |                 810.5 |
 
 ** _This is using the Preview 14 template built with MAUI RC 1. In RC 1,
 the template changed to use the shell navigation pattern and
