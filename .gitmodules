@@ -1,0 +1,3 @@
+[submodule "external/dotnet-podcasts"]
+	path = external/dotnet-podcasts
+	url = https://github.com/microsoft/dotnet-podcasts.git
