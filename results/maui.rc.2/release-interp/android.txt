@@ -1,0 +1,97 @@
+> .\scripts\install.ps1 .\apks\maui.rc.2\release-interp\com.companyname.HelloAndroid-Signed.apk
+adb uninstall com.companyname.HelloAndroid
+Success
+Performing Streamed Install
+Success
+C:\src\maui-profiling [main ≡ +2 ~2 -0 !]> .\scripts\profile.ps1 -package com.companyname.HelloAndroid -activity crc6490bfc84a0f5dff7a.MainActivity
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 261
+WaitTime: 263
+Complete
+Keeping the app on screen for 10 seconds...
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 209
+WaitTime: 211
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 194
+WaitTime: 195
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 215
+WaitTime: 217
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 196
+WaitTime: 197
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 216
+WaitTime: 217
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 216
+WaitTime: 217
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 226
+WaitTime: 227
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 210
+WaitTime: 212
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 206
+WaitTime: 208
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 211
+WaitTime: 213
+Complete
+04-25 10:35:59.852  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +209ms
+04-25 10:36:01.280  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +194ms
+04-25 10:36:02.636  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +215ms
+04-25 10:36:03.992  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +196ms
+04-25 10:36:05.420  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +216ms
+04-25 10:36:06.797  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +216ms
+04-25 10:36:08.219  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +226ms
+04-25 10:36:09.596  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +210ms
+04-25 10:36:10.994  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +206ms
+04-25 10:36:12.358  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +211ms
+Average(ms): 209.9
+Std Err(ms): 3.02379452564709
+Std Dev(ms): 9.56207787739325

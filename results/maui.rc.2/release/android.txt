@@ -1,0 +1,92 @@
+> .\scripts\profile.ps1 -package com.companyname.HelloAndroid -activity crc6490bfc84a0f5dff7a.MainActivity
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 269
+WaitTime: 274
+Complete
+Keeping the app on screen for 10 seconds...
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 273
+WaitTime: 275
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 252
+WaitTime: 254
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 256
+WaitTime: 258
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 256
+WaitTime: 257
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 262
+WaitTime: 263
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 259
+WaitTime: 261
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 258
+WaitTime: 261
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 253
+WaitTime: 255
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 251
+WaitTime: 252
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 258
+WaitTime: 260
+Complete
+04-25 10:34:40.745  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +273ms
+04-25 10:34:42.172  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +252ms
+04-25 10:34:43.639  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +256ms
+04-25 10:34:45.108  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +256ms
+04-25 10:34:46.555  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +262ms
+04-25 10:34:48.037  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +259ms
+04-25 10:34:49.483  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +258ms
+04-25 10:34:50.900  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +253ms
+04-25 10:34:52.310  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +251ms
+04-25 10:34:53.803  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +258ms
+Average(ms): 257.8
+Std Err(ms): 1.99888858007533
+Std Dev(ms): 6.3210407019379

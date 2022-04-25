@@ -1,0 +1,92 @@
+> .\scripts\profile.ps1 -package com.companyname.hellomaui.old -activity crc649c5ece8fda82dfed.MainActivity
+Starting: Intent { cmp=com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity
+TotalTime: 833
+WaitTime: 837
+Complete
+Keeping the app on screen for 10 seconds...
+Starting: Intent { cmp=com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity
+TotalTime: 839
+WaitTime: 843
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity
+TotalTime: 860
+WaitTime: 863
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity
+TotalTime: 822
+WaitTime: 824
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity
+TotalTime: 823
+WaitTime: 825
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity
+TotalTime: 829
+WaitTime: 832
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity
+TotalTime: 835
+WaitTime: 837
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity
+TotalTime: 854
+WaitTime: 855
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity
+TotalTime: 835
+WaitTime: 837
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity
+TotalTime: 820
+WaitTime: 823
+Complete
+Starting: Intent { cmp=com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity
+TotalTime: 859
+WaitTime: 862
+Complete
+04-25 10:26:00.760  1820  1981 I ActivityTaskManager: Displayed com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity: +839ms
+04-25 10:26:02.766  1820  1981 I ActivityTaskManager: Displayed com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity: +860ms
+04-25 10:26:04.744  1820  1981 I ActivityTaskManager: Displayed com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity: +822ms
+04-25 10:26:06.780  1820  1981 I ActivityTaskManager: Displayed com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity: +823ms
+04-25 10:26:08.831  1820  1981 I ActivityTaskManager: Displayed com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity: +829ms
+04-25 10:26:10.839  1820  1981 I ActivityTaskManager: Displayed com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity: +835ms
+04-25 10:26:12.870  1820  1981 I ActivityTaskManager: Displayed com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity: +854ms
+04-25 10:26:14.937  1820  1981 I ActivityTaskManager: Displayed com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity: +835ms
+04-25 10:26:16.932  1820  1981 I ActivityTaskManager: Displayed com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity: +820ms
+04-25 10:26:18.975  1820  1981 I ActivityTaskManager: Displayed com.companyname.hellomaui.old/crc649c5ece8fda82dfed.MainActivity: +859ms
+Average(ms): 837.6
+Std Err(ms): 4.81248376620639
+Std Dev(ms): 15.2184099037974

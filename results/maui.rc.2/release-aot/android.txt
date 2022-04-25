@@ -1,0 +1,91 @@
+> .\scripts\profile.ps1 -package com.companyname.HelloAndroid -activity crc6490bfc84a0f5dff7a.MainActivity
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 194
+WaitTime: 195
+Complete
+Keeping the app on screen for 10 seconds...
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 166
+WaitTime: 170
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 172
+WaitTime: 173
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 175
+WaitTime: 176
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 166
+WaitTime: 167
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 165
+WaitTime: 167
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 185
+WaitTime: 187
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 174
+WaitTime: 176
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 171
+WaitTime: 173
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 178
+WaitTime: 180
+Complete
+Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity
+TotalTime: 194
+WaitTime: 197
+Complete
+04-25 10:40:05.537  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +166ms
+04-25 10:40:06.920  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +172ms
+04-25 10:40:08.288  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +175ms
+04-25 10:40:09.657  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +166ms
+04-25 10:40:11.004  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +165ms
+04-25 10:40:12.423  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +185ms
+04-25 10:40:13.775  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +174ms
+04-25 10:40:15.110  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +171ms
+04-25 10:40:16.514  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +178ms
+04-25 10:40:17.912  1820  1981 I ActivityTaskManager: Displayed com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity: +194ms
+Average(ms): 174.6
+Std Err(ms): 2.89904198735452
+Std Dev(ms): 9.16757571250134
