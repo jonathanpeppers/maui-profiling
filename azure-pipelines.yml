@@ -9,6 +9,8 @@ variables:
   AndroidPackageFormat: apk
   RID: android-arm64
   DotNet.Version: 6.0.x
+  Maui.Rollback: https://maui.blob.core.windows.net/metadata/rollbacks/6.0.3xx.json
+  Maui.Feeds: --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet6/nuget/v3/index.json --source https://api.nuget.org/v3/index.json
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
 
@@ -103,7 +105,7 @@ jobs:
     inputs:
       version: $(DotNet.Version)
 
-  - bash: dotnet workload install maui --verbosity diag
+  - bash: dotnet workload install maui --from-rollback-file $(Maui.Rollback) $(Maui.Feeds) --verbosity diag
     displayName: install optional workloads
 
   - bash: >
