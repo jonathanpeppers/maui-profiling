@@ -110,7 +110,7 @@ jobs:
       echo "##vso[task.setvariable variable=PATH]$PATH"
     displayName: install .NET $(DotNet.Version)
 
-  - bash: dotnet workload install maui --verbosity diag --from-rollback-file https://maui.blob.core.windows.net/metadata/rollbacks/6.0.400/282007f735e35eeae0ace282c0d49b0b12b2242b.json
+  - bash: dotnet workload install maui --verbosity diag --from-rollback-file workload.json
     displayName: install optional workloads
 
   - bash: >
