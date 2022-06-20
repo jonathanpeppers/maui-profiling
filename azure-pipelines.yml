@@ -108,7 +108,10 @@ jobs:
       echo "##vso[task.setvariable variable=PATH]$PATH"
     displayName: install .NET $(DotNet.Version)
 
-  - bash: dotnet workload install maui --verbosity diag
+  - bash: dotnet workload update --verbosity diag --no-cache
+    displayName: update workload manifests
+
+  - bash: dotnet workload install maui --verbosity diag --no-cache
     displayName: install optional workloads
 
   - bash: >
