@@ -8,7 +8,7 @@ variables:
   AndroidSupportedAbis: arm64-v8a
   AndroidPackageFormat: apk
   RID: android-arm64
-  DotNet.Version: 7.0.100-preview.6.22316.8
+  DotNet.Version: 7.0.100-preview.7.22354.2
   DotNet.Root: /usr/local/share/dotnet/
   Maui.Rollback: https://aka.ms/dotnet/maui/net7.0.json
   Maui.Feeds: --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet7/nuget/v3/index.json --source https://api.nuget.org/v3/index.json
@@ -111,7 +111,7 @@ jobs:
       echo "##vso[task.setvariable variable=PATH]$PATH"
     displayName: install .NET $(DotNet.Version)
 
-  - bash: dotnet workload install maui $(Maui.Feeds) --from-rollback-file $(Maui.Rollback) --verbosity diag
+  - bash: dotnet workload install maui $(Maui.Feeds) --verbosity diag
     displayName: install optional workloads
 
   - bash: >
