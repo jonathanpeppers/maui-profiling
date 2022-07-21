@@ -8,7 +8,7 @@ variables:
   AndroidSupportedAbis: arm64-v8a
   AndroidPackageFormat: apk
   RID: android-arm64
-  DotNet.Version: 7.0.100-preview.7.22354.2
+  DotNet.Version: 7.0.100-preview.7.22361.1
   DotNet.Root: /usr/local/share/dotnet/
   Maui.Rollback: https://maui.blob.core.windows.net/metadata/rollbacks/7.0.0/preview.7.json
   Maui.Feeds: --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet7/nuget/v3/index.json --source https://api.nuget.org/v3/index.json
