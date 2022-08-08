@@ -96,6 +96,7 @@ jobs:
         /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/*
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/xamarin-android
+    condition: succeededOrFailed()
 
   - task: PublishBuildArtifacts@1
     displayName: upload artifacts
