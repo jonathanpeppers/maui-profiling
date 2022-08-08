@@ -27,6 +27,8 @@ jobs:
       version: $(DotNet.Version)
 
   - bash: >
+      ls -la /Library/Frameworks/Xamarin.Android.framework/ &&
+      echo 'here!' &&
       ls -la /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/ &&
       dotnet tool install boots --tool-path boots --version 1.1.0.712-preview2  &&
       ./boots/boots --preview Xamarin.Android &&
