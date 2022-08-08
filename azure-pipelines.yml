@@ -89,14 +89,10 @@ jobs:
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
 
-  - task: CopyFiles@2
+  - bash: >
+      ls -la /Library/Frameworks/Xamarin.Android.framework/Versions/Current/lib/xamarin.android/xbuild/Xamarin/Android/** &&
+      cp -r /Library/Frameworks/Xamarin.Android.framework/Versions/Current/lib/xamarin.android/xbuild/Xamarin/Android/* $(Build.ArtifactStagingDirectory)/xamarin-android
     displayName: copy xamarin-android files
-    inputs:
-      contents: |
-        /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/**
-        /Library/Frameworks/Xamarin.Android.framework/Versions/Current/lib/xamarin.android/xbuild/Xamarin/Android/**
-      flattenFolders: true
-      targetFolder: $(Build.ArtifactStagingDirectory)/xamarin-android
     condition: succeededOrFailed()
 
   - task: PublishBuildArtifacts@1
