@@ -93,7 +93,8 @@ jobs:
     displayName: copy xamarin-android files
     inputs:
       contents: |
-        /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/*
+        /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/**
+        /Library/Frameworks/Xamarin.Android.framework/Versions/Current/lib/xamarin.android/xbuild/Xamarin/Android/**
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/xamarin-android
     condition: succeededOrFailed()
