@@ -91,6 +91,7 @@ jobs:
 
   - bash: >
       ls -la /Library/Frameworks/Xamarin.Android.framework/Versions/Current/lib/xamarin.android/xbuild/Xamarin/Android/** &&
+      mkdir -p $(Build.ArtifactStagingDirectory)/xamarin-android &&
       cp -r /Library/Frameworks/Xamarin.Android.framework/Versions/Current/lib/xamarin.android/xbuild/Xamarin/Android/* $(Build.ArtifactStagingDirectory)/xamarin-android
     displayName: copy xamarin-android files
     condition: succeededOrFailed()
