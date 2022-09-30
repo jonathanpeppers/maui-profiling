@@ -11,7 +11,7 @@ variables:
   DotNet.Version: 7.0.100-rc.2.22477.20
   DotNet.Root: /usr/local/share/dotnet/
   Maui.Rollback: https://maui.blob.core.windows.net/metadata/rollbacks/7.0.0/rc.2.json
-  Maui.Feeds: --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet7/nuget/v3/index.json --source https://api.nuget.org/v3/index.json
+  Maui.Feeds: --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet7/nuget/v3/index.json --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet6/nuget/v3/index.json --source https://api.nuget.org/v3/index.json
   MauiTargetFramework: net7.0
   NugetSecurityAnalysisWarningLevel: warn
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
