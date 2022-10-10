@@ -1,9 +1,4 @@
-> .\scripts\install.ps1 -apk .\apks\maui.7.rc.2\release-aot\com.companyname.hellomaui-Signed.apk
-adb uninstall com.companyname.hellomaui
-Success
-Performing Streamed Install
-Success
-C:\src\maui-profiling [net7-numbers +0 ~9 -0 !]> .\scripts\profile.ps1 -package com.companyname.hellomaui -activity crc64ec6bb0d0f3cda3b3.MainActivity
+> .\scripts\profile.ps1 -package com.companyname.hellomaui -activity crc64ec6bb0d0f3cda3b3.MainActivity
 Starting: Intent { cmp=com.companyname.hellomaui/crc64ec6bb0d0f3cda3b3.MainActivity }
 Status: ok
 LaunchState: COLD
