@@ -1,9 +1,4 @@
-> .\scripts\install.ps1 -apk apks\maui.7.rc.2\release-aot\com.companyname.HelloAndroid-Signed.apk
-adb uninstall com.companyname.HelloAndroid
-Success
-Performing Streamed Install
-Success
-C:\src\maui-profiling [net7-numbers +0 ~3 -0 !]> .\scripts\profile.ps1 -package com.companyname.HelloAndroid -activity crc6490bfc84a0f5dff7a.MainActivity
+> .\scripts\profile.ps1 -package com.companyname.HelloAndroid -activity crc6490bfc84a0f5dff7a.MainActivity
 Starting: Intent { cmp=com.companyname.HelloAndroid/crc6490bfc84a0f5dff7a.MainActivity }
 Status: ok
 LaunchState: COLD
