@@ -8,7 +8,7 @@ variables:
   AndroidSupportedAbis: arm64-v8a
   AndroidPackageFormat: apk
   RID: android-arm64
-  DotNet.Version: 7.0.100-rc.2
+  DotNet.Version: 7.0.x
   MauiTargetFramework: net7.0
   NugetSecurityAnalysisWarningLevel: warn
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
