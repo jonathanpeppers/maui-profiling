@@ -8,10 +8,8 @@ variables:
   AndroidSupportedAbis: arm64-v8a
   AndroidPackageFormat: apk
   RID: android-arm64
-  DotNet.Version: 7.0.100-rc.2.22477.20
-  DotNet.Root: /usr/local/share/dotnet/
-  Maui.Rollback: https://aka.ms/dotnet/maui/net7.0.json
-  Maui.Feeds: --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet7/nuget/v3/index.json --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet6/nuget/v3/index.json --source https://api.nuget.org/v3/index.json
+  DotNet.Version: 7.0.x
+  Maui.Feeds: --source https://api.nuget.org/v3/index.json --source https://pkgs.dev.azure.com/dnceng/public/_packaging/darc-pub-dotnet-runtime-1e1f688d/nuget/v3/index.json
   MauiTargetFramework: net7.0
   NugetSecurityAnalysisWarningLevel: warn
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
@@ -26,9 +24,10 @@ jobs:
   steps:
 
   - task: UseDotNet@2
-    displayName: Use .NET 6
+    displayName: Use .NET $(DotNet.Version)
     inputs:
       version: $(DotNet.Version)
+      includePreviewVersions: true
 
   - bash: >
       dotnet tool install boots --tool-path boots &&
@@ -104,15 +103,13 @@ jobs:
   - checkout: self
     submodules: true
 
-  - bash: >
-      export PATH="$(DotNet.Root):$PATH" &&
-      curl -L https://dot.net/v1/dotnet-install.sh > dotnet-install.sh &&
-      sh dotnet-install.sh --version $(DotNet.Version) --install-dir $(DotNet.Root) --verbose &&
-      dotnet --list-sdks &&
-      echo "##vso[task.setvariable variable=PATH]$PATH"
-    displayName: install .NET $(DotNet.Version)
+  - task: UseDotNet@2
+    displayName: Use .NET $(DotNet.Version)
+    inputs:
+      version: $(DotNet.Version)
+      includePreviewVersions: true
 
-  - bash: dotnet workload install maui $(Maui.Feeds) --from-rollback-file $(Maui.Rollback) --verbosity diag
+  - bash: dotnet workload install maui $(Maui.Feeds) --verbosity diag
     displayName: install optional workloads
 
   - bash: >
