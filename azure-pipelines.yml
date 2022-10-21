@@ -7,7 +7,6 @@ variables:
   Configuration: Release
   AndroidSupportedAbis: arm64-v8a
   AndroidPackageFormat: apk
-  AndroidNdkDirectory: $(ANDROID_NDK_HOME)
   RID: android-arm64
   DotNet.Version: 7.0.x
   Maui.Feeds: --source https://api.nuget.org/v3/index.json --source https://pkgs.dev.azure.com/dnceng/public/_packaging/darc-pub-dotnet-runtime-1e1f688d/nuget/v3/index.json
@@ -95,19 +94,19 @@ jobs:
     displayName: build Xamarin.Android app LLVM
     inputs:
       solution: XamarinAndroidApp/XamarinAndroidApp/XamarinAndroidApp.csproj
-      msbuildArguments: -t:Clean,SignAndroidPackage -p:AotAssemblies=true -p:EnableLLVM=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinAndroidApp-LLVM.binlog
+      msbuildArguments: -t:Clean,SignAndroidPackage -p:AotAssemblies=true -p:EnableLLVM=true -p:AndroidNdkDirectory=$(ANDROID_NDK_HOME) -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinAndroidApp-LLVM.binlog
 
   - task: MSBuild@1
     displayName: build Xamarin.Forms Flyout app LLVM
     inputs:
       solution: XamarinFormsFlyout/XamarinFormsApp/XamarinFormsApp.Android/XamarinFormsApp.Android.csproj
-      msbuildArguments: -t:Clean,SignAndroidPackage -p:AotAssemblies=true -p:EnableLLVM=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsFlyout-LLVM.binlog
+      msbuildArguments: -t:Clean,SignAndroidPackage -p:AotAssemblies=true -p:EnableLLVM=true -p:AndroidNdkDirectory=$(ANDROID_NDK_HOME) -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsFlyout-LLVM.binlog
 
   - task: MSBuild@1
     displayName: build Xamarin.Forms Blank app LLVM
     inputs:
       solution: XamarinFormsBlank/XamarinFormsBlank/XamarinFormsBlank.Android/XamarinFormsBlank.Android.csproj
-      msbuildArguments: -t:Clean,SignAndroidPackage -p:AotAssemblies=true -p:EnableLLVM=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsFlyout-LLVM.binlog
+      msbuildArguments: -t:Clean,SignAndroidPackage -p:AotAssemblies=true -p:EnableLLVM=true -p:AndroidNdkDirectory=$(ANDROID_NDK_HOME) -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/XamarinFormsFlyout-LLVM.binlog
 
   - task: CopyFiles@2
     displayName: copy apks
@@ -221,16 +220,16 @@ jobs:
       flattenFolders: true
       targetFolder: $(Build.ArtifactStagingDirectory)/release-aot
 
-  - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:EnableLLVM=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid-LLVM.binlog
+  - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:EnableLLVM=true -p:AndroidNdkDirectory=$(ANDROID_NDK_HOME) -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid-LLVM.binlog
     displayName: build android LLVM
 
-  - bash: dotnet build HelloMaui/HelloMaui.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:EnableLLVM=true -p:AndroidEnableProfiledAot=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-LLVM.binlog
+  - bash: dotnet build HelloMaui/HelloMaui.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:EnableLLVM=true -p:AndroidNdkDirectory=$(ANDROID_NDK_HOME) -p:AndroidEnableProfiledAot=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-LLVM.binlog
     displayName: build maui LLVM
 
-  - bash: dotnet build HelloMauiOld/HelloMauiOld.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:EnableLLVM=true -p:AndroidEnableProfiledAot=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMauiOld-LLVM.binlog
+  - bash: dotnet build HelloMauiOld/HelloMauiOld.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:EnableLLVM=true -p:AndroidNdkDirectory=$(ANDROID_NDK_HOME) -p:AndroidEnableProfiledAot=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMauiOld-LLVM.binlog
     displayName: build old maui LLVM
 
-  - bash: dotnet build external/dotnet-podcasts/src/Mobile/Microsoft.NetConf2021.Maui.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:RunAOTCompilation -p:EnableLLVM=true -p:AndroidEnableProfiledAot=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/dotnet-podcasts-LLVM.binlog
+  - bash: dotnet build external/dotnet-podcasts/src/Mobile/Microsoft.NetConf2021.Maui.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:RunAOTCompilation -p:EnableLLVM=true -p:AndroidNdkDirectory=$(ANDROID_NDK_HOME) -p:AndroidEnableProfiledAot=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/dotnet-podcasts-LLVM.binlog
     displayName: build podcast LLVM
 
   - task: CopyFiles@2
