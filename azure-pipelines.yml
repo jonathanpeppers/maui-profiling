@@ -117,6 +117,17 @@ jobs:
     displayName: install .NET $(DotNet.Version)
     condition: and(succeeded(), ne(variables['agent.os'], 'Windows_NT'))
 
+  - bash: >
+      DOTNET_ROOT=~/.dotnet/ &&
+      curl -L https://dot.net/v1/dotnet-install.sh --retry 5 --retry-max-time 300 > dotnet-install.sh &&
+      chmod +x dotnet-install.sh &&
+      ./dotnet-install.sh --channel 6.0 --quality GA --install-dir $DOTNET_ROOT --verbose &&
+      PATH="$DOTNET_ROOT:$PATH" &&
+      echo "##vso[task.setvariable variable=DOTNET_ROOT]$DOTNET_ROOT" &&
+      echo "##vso[task.setvariable variable=PATH]$PATH"
+    displayName: install .NET $(DotNet.Version)
+    condition: and(succeeded(), ne(variables['agent.os'], 'Windows_NT'))
+
   - script: dotnet --info
     displayName: display dotnet --info
 
