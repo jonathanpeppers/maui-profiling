@@ -1,6 +1,5 @@
 {
     "sdk": {
-      "allowPrerelease": true,
-      "rollForward": "latestMinor"
+      "allowPrerelease": true
     }
 }
