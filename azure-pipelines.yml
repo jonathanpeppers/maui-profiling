@@ -8,12 +8,14 @@ variables:
   AndroidSupportedAbis: arm64-v8a
   AndroidPackageFormat: apk
   RID: android-arm64
-  DotNet.Version: 7.0.x
+  DotNet.Version: 7.0.1xx
+  DotNet.Quality: Preview
   Maui.Feeds: --source https://api.nuget.org/v3/index.json --source https://pkgs.dev.azure.com/dnceng/public/_packaging/darc-pub-dotnet-runtime-1e1f688d/nuget/v3/index.json
   MauiTargetFramework: net7.0
   NugetSecurityAnalysisWarningLevel: warn
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
+  RemoveDotNet: true
 
 jobs:
 
@@ -102,6 +104,24 @@ jobs:
   steps:
   - checkout: self
     submodules: true
+
+  - bash: >
+      DOTNET_ROOT=~/.dotnet/ &&
+      (if [[ "$(RemoveDotNet)" == "true" ]] ; then rm -rfv $DOTNET_ROOT; fi) &&
+      curl -L https://dot.net/v1/dotnet-install.sh --retry 5 --retry-max-time 300 > dotnet-install.sh &&
+      chmod +x dotnet-install.sh &&
+      ./dotnet-install.sh --channel $(DotNet.Version) --quality $(DotNet.Quality) --install-dir $DOTNET_ROOT --verbose &&
+      PATH="$DOTNET_ROOT:$PATH" &&
+      echo "##vso[task.setvariable variable=DOTNET_ROOT]$DOTNET_ROOT" &&
+      echo "##vso[task.setvariable variable=PATH]$PATH"
+    displayName: install .NET $(DotNet.Version)
+    condition: and(succeeded(), ne(variables['agent.os'], 'Windows_NT'))
+
+  - script: dotnet --info
+    displayName: display dotnet --info
+
+  - script: asdf
+    displayName: stop build
 
   - task: UseDotNet@2
     displayName: Use .NET $(DotNet.Version)
