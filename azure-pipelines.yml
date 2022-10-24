@@ -8,7 +8,8 @@ variables:
   AndroidSupportedAbis: arm64-v8a
   AndroidPackageFormat: apk
   RID: android-arm64
-  DotNet.Version: 8.0.200-alpha.1.22511.1
+  DotNet.Version: 7.0.1xx
+  DotNet.Quality: Preview
   Maui.Feeds: --source https://api.nuget.org/v3/index.json --source https://pkgs.dev.azure.com/dnceng/public/_packaging/darc-pub-dotnet-runtime-1e1f688d/nuget/v3/index.json
   MauiTargetFramework: net7.0
   NugetSecurityAnalysisWarningLevel: warn
@@ -109,7 +110,7 @@ jobs:
       (if [[ "$(RemoveDotNet)" == "true" ]] ; then rm -rfv $DOTNET_ROOT; fi) &&
       curl -L https://dot.net/v1/dotnet-install.sh --retry 5 --retry-max-time 300 > dotnet-install.sh &&
       chmod +x dotnet-install.sh &&
-      ./dotnet-install.sh --version $(DotNet.Version) --install-dir $DOTNET_ROOT --verbose &&
+      ./dotnet-install.sh --channel $(DotNet.Version) --quality $(DotNet.Quality) --install-dir $DOTNET_ROOT --verbose &&
       PATH="$DOTNET_ROOT:$PATH" &&
       echo "##vso[task.setvariable variable=DOTNET_ROOT]$DOTNET_ROOT" &&
       echo "##vso[task.setvariable variable=PATH]$PATH"
