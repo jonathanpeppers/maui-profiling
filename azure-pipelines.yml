@@ -9,7 +9,7 @@ variables:
   AndroidPackageFormat: apk
   RID: android-arm64
   DotNet.Version: 7.0.x
-  Maui.Feeds: --source https://api.nuget.org/v3/index.json --source https://pkgs.dev.azure.com/dnceng/public/_packaging/darc-pub-dotnet-runtime-1e1f688d/nuget/v3/index.json
+  Maui.Feeds: --source https://api.nuget.org/v3/index.json
   MauiTargetFramework: net7.0
   NugetSecurityAnalysisWarningLevel: warn
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
