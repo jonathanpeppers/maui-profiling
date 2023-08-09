@@ -5,10 +5,10 @@
     "microsoft.net.sdk.macos": "13.3.8694-net8-p7/8.0.100-preview.7",
     "microsoft.net.sdk.maui": "8.0.0-preview.7.8842/8.0.100-preview.7",
     "microsoft.net.sdk.tvos": "16.4.8694-net8-p7/8.0.100-preview.7",
-    "microsoft.net.workload.mono.toolchain.current": "8.0.0-preview.7.23375.6/8.0.100-preview.7",
+    "microsoft.net.workload.mono.toolchain.current": "8.0.0-preview.7.23325.2/8.0.100-preview.7",
     "microsoft.net.workload.emscripten.current": "8.0.0-preview.7.23375.2/8.0.100-preview.7",
     "microsoft.net.workload.emscripten.net6": "8.0.0-preview.7.23375.2/8.0.100-preview.7",
     "microsoft.net.workload.emscripten.net7": "8.0.0-preview.7.23375.2/8.0.100-preview.7",
-    "microsoft.net.workload.mono.toolchain.net6": "8.0.0-preview.7.23375.6/8.0.100-preview.7",
-    "microsoft.net.workload.mono.toolchain.net7": "8.0.0-preview.7.23375.6/8.0.100-preview.7"
+    "microsoft.net.workload.mono.toolchain.net6": "8.0.0-preview.7.23325.2/8.0.100-preview.7",
+    "microsoft.net.workload.mono.toolchain.net7": "8.0.0-preview.7.23325.2/8.0.100-preview.7"
 }
