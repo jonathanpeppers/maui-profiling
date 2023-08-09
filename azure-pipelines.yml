@@ -113,6 +113,11 @@ jobs:
     displayName: install optional workloads
 
   - bash: >
+      dotnet workload update --print-rollback > $(Build.ArtifactStagingDirectory)/rollback.json &&
+      cat $(Build.ArtifactStagingDirectory)/rollback.json
+    displayName: save rollback file
+
+  - bash: >
       dotnet new android -o HelloAndroid &&
       dotnet new maui -o HelloMaui
     displayName: dotnet new
