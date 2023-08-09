@@ -99,6 +99,8 @@ jobs:
     condition: succeededOrFailed()
 
 - job: MAUI
+  workspace:
+    clean: all
   pool:
     vmImage: macOS-latest
   steps:
