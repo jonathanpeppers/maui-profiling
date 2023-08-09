@@ -110,7 +110,7 @@ jobs:
       version: $(DotNet.Version)
       includePreviewVersions: true
 
-  - bash: dotnet workload install maui $(Maui.Feeds) --verbosity diag
+  - bash: dotnet workload install maui $(Maui.Feeds) --from-rollback-file workloads.json --verbosity diag
     displayName: install optional workloads
 
   - bash: >
