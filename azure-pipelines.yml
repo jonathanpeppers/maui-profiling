@@ -124,6 +124,15 @@ jobs:
       dotnet new maui -o HelloMaui
     displayName: dotnet new
 
+  - bash: dotnet restore HelloMaui/HelloMaui.csproj -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-restore.binlog
+    displayName: restore maui
+
+  - bash: dotnet restore HelloMauiOld/HelloMauiOld.csproj -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMauiOld-restore.binlog
+    displayName: restore old maui
+
+  - bash: dotnet restore external/dotnet-podcasts/src/Mobile/Microsoft.NetConf2021.Maui.csproj -bl:$(Build.ArtifactStagingDirectory)/logs/dotnet-podcasts-restore.binlog
+    displayName: restore podcast
+
   - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid-Aot.binlog
     displayName: build android AOT
 
