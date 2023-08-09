@@ -8,6 +8,7 @@ variables:
   AndroidSupportedAbis: arm64-v8a
   AndroidPackageFormat: apk
   AndroidEnableMarshalMethods: true
+  AndroidEnableProfiler: true
   RID: android-arm64
   DotNet.Version: 8.0.x
   Maui.Feeds: --source https://api.nuget.org/v3/index.json --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet8/nuget/v3/index.json
