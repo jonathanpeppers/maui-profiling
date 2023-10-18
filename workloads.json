@@ -1,14 +1,12 @@
 {
-    "microsoft.net.sdk.android": "34.0.0-preview.6.359/8.0.100-preview.6",
-    "microsoft.net.sdk.ios": "16.4.8646-net8-p6/8.0.100-preview.6",
-    "microsoft.net.sdk.maccatalyst": "16.4.8646-net8-p6/8.0.100-preview.6",
-    "microsoft.net.sdk.macos": "13.3.8646-net8-p6/8.0.100-preview.6",
-    "microsoft.net.sdk.maui": "8.0.0-preview.6.8686/8.0.100-preview.6",
-    "microsoft.net.sdk.tvos": "16.4.8646-net8-p6/8.0.100-preview.6",
-    "microsoft.net.workload.mono.toolchain.current": "8.0.0-preview.6.23329.7/8.0.100-preview.6",
-    "microsoft.net.workload.emscripten.current": "8.0.0-preview.6.23326.2/8.0.100-preview.6",
-    "microsoft.net.workload.emscripten.net6": "8.0.0-preview.6.23326.2/8.0.100-preview.6",
-    "microsoft.net.workload.emscripten.net7": "8.0.0-preview.6.23326.2/8.0.100-preview.6",
-    "microsoft.net.workload.mono.toolchain.net6": "8.0.0-preview.6.23329.7/8.0.100-preview.6",
-    "microsoft.net.workload.mono.toolchain.net7": "8.0.0-preview.6.23329.7/8.0.100-preview.6"
+    "microsoft.net.sdk.android": "34.0.31/8.0.100",
+    "microsoft.net.sdk.ios": "17.0.8438/8.0.100",
+    "microsoft.net.sdk.maccatalyst": "17.0.8438/8.0.100",
+    "microsoft.net.sdk.macos": "14.0.8438/8.0.100",
+    "microsoft.net.sdk.maui": "8.0.0-ci.net8.9426/8.0.100",
+    "microsoft.net.sdk.tvos": "17.0.8438/8.0.100",
+    "microsoft.net.workload.mono.toolchain.net7": "8.0.0-rtm.23511.16/8.0.100-rtm",
+    "microsoft.net.workload.mono.toolchain.current": "8.0.0-rtm.23511.16/8.0.100-rtm",
+    "microsoft.net.workload.emscripten.net7": "8.0.0-rtm.23504.4/8.0.100-rtm",
+    "microsoft.net.workload.emscripten.current": "8.0.0-rtm.23504.4/8.0.100-rtm"
 }
