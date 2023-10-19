@@ -18,6 +18,7 @@ These numbers were measured with preinstalled apps with `scripts\profile.ps1` on
 | dotnet new android |  MAUI RC2 |        257.8 |                209.9 |                 174.6 |
 | dotnet new android |   MAUI GA |        262.7 |                217.6 |                 182.8 |
 | dotnet new android | .NET 7 RC 2 |      261.6 |                177.2 |                 178.1 |
+| dotnet new android | .NET 7 svc  |      276.3 |                192.7 |                 180.8 |
 | XamarinFormsBlank  |   Xamarin |        767.9 |                    - |                 498.6 |
 | XamarinFormsFlyout |   Xamarin |       1369.5 |                    - |                 817.7 |
 | dotnet new maui    |  MAUI P10 |       1078.0 |                    - |                 683.9 |
@@ -29,21 +30,28 @@ These numbers were measured with preinstalled apps with `scripts\profile.ps1` on
 | dotnet new maui    |  MAUI RC2 |       1292.6 |                962.1 |                 563.7 |
 | dotnet new maui    |   MAUI GA |       1411.8 |                978.0 |                 568.1 |
 | dotnet new maui    | .NET 7 RC 2 |     1233.3 |                775.3 |                 545.4 |
+| dotnet new maui    | .NET 7 svc  |     1283.1 |                798.6 |                 563.2 |
 | dotnet new maui**  |  MAUI RC1 |        824.1 |                664.1 |                 437.1 |
 | dotnet new maui**  |  MAUI RC2 |        837.6 |                678.3 |                 455.2 |
 | dotnet new maui**  |   MAUI GA |        876.1 |                703.2 |                 464.2 |
 | dotnet new maui**  | .NET 7 RC 2 |      839.3 |                607.9 |                 462.9 |
+| dotnet new maui**  | .NET 7 svc  |      883.9 |                630.9 |                 490.5 |
 | .NET Podcast       |  MAUI P14 |       1564.4 |               1177.5 |                1027.7 |
 | .NET Podcast       |  MAUI RC1 |       1471.2 |               1139.9 |                 810.5 |
 | .NET Podcast       |  MAUI RC2 |       1496.1 |               1148.5 |                 791.0 |
 | .NET Podcast       |   MAUI GA |       1538.4 |               1171.1 |                 814.2 |
 | .NET Podcast       | .NET 7 RC 2 |     1459.2 |                972.9 |                 759.7 |
+| .NET Podcast       | .NET 7 svc  |     1501.3 |               1011.1 |                 787.2 |
 
 ** _This is using the Preview 14 template built with MAUI RC 1. In RC 1,
 the template changed to use the shell navigation pattern and
 includes lots of built-in styles. It is a better template -- it just
 has more "stuff" in it. The old template's times should be a direct
 comparison between past releases._
+
+NOTE: `.NET 7 svc` (servicing) is using .NET MAUI 7.0.96. I am using the same
+device from above benchmarks, but it has had several Android updates and is
+likely now aging.
 
 * `XamarinAndroidApp`: Xamarin.Android Single View Application template from VS 2022
 * `XamarinFormsFlyout`: Xamarin.Forms Flyout template from VS 2022
