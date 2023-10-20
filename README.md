@@ -55,7 +55,8 @@ comparison between past releases._
 
 NOTE: `.NET 7 svc` (servicing) is using .NET MAUI 7.0.96. I am using the same
 device from above benchmarks, but it has had several Android updates and is
-likely now aging.
+likely now aging. I reran one of these using the `.apk` and the number went from
+545.4ms -> 558.8ms using the exact same device today.
 
 * `XamarinAndroidApp`: Xamarin.Android Single View Application template from VS 2022
 * `XamarinFormsFlyout`: Xamarin.Forms Flyout template from VS 2022
