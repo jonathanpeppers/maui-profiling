@@ -8,9 +8,11 @@ variables:
   AndroidSupportedAbis: arm64-v8a
   AndroidPackageFormat: apk
   RID: android-arm64
-  DotNet.Version: 8.0.x
-  Maui.Feeds: --source https://api.nuget.org/v3/index.json
-  MauiTargetFramework: net8.0
+  DotNet.Version: 9.0.100-preview.5.24307.3
+  DotNet.Root: /usr/local/share/dotnet/
+  Maui.Rollback: https://maui.blob.core.windows.net/metadata/rollbacks/net9.0.json
+  Maui.Feeds: --source https://api.nuget.org/v3/index.json --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet9/nuget/v3/index.json
+  MauiTargetFramework: net9.0
   NugetSecurityAnalysisWarningLevel: warn
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
@@ -105,14 +107,14 @@ jobs:
   - checkout: self
     submodules: true
 
-  - task: UseDotNet@2
-    displayName: Use .NET $(DotNet.Version)
-    inputs:
-      version: $(DotNet.Version)
-      includePreviewVersions: true
-
-  - bash: dotnet workload install maui $(Maui.Feeds) --verbosity diag
-    displayName: install optional workloads
+  - bash: >
+      export PATH="$(DotNet.Root):$PATH" &&
+      curl -L https://dot.net/v1/dotnet-install.sh > dotnet-install.sh &&
+      sh dotnet-install.sh --version $(DotNet.Version) --install-dir $(DotNet.Root) --verbose &&
+      dotnet --list-sdks &&
+      echo "##vso[task.setvariable variable=PATH]$PATH"
+    displayName: install .NET $(DotNet.Version)
+  - bash: dotnet workload install maui $(Maui.Feeds) --from-rollback-file $(Maui.Rollback) --verbosity diag
 
   - bash: >
       dotnet new android -o HelloAndroid &&
@@ -131,11 +133,13 @@ jobs:
       dotnet restore HelloMauiOld/HelloMauiOld.csproj -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMauiOld-restore.binlog &&
       dotnet build HelloMauiOld/HelloMauiOld.csproj -f $(MauiTargetFramework)-android -r $(RID) -p:RunAOTCompilation=false --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMauiOld.binlog
     displayName: build old maui
+    condition: false
 
   - bash: >
       dotnet restore external/dotnet-podcasts/src/Mobile/Microsoft.NetConf2021.Maui.csproj -bl:$(Build.ArtifactStagingDirectory)/logs/dotnet-podcasts-restore.binlog &&
       dotnet build external/dotnet-podcasts/src/Mobile/Microsoft.NetConf2021.Maui.csproj -f $(MauiTargetFramework)-android -r $(RID) -p:RunAOTCompilation=false --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/dotnet-podcasts.binlog
     displayName: build podcast
+    condition: false
 
   - task: CopyFiles@2
     displayName: copy apks
@@ -156,9 +160,11 @@ jobs:
 
   - bash: dotnet build HelloMauiOld/HelloMauiOld.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:UseInterpreter=true -p:RunAOTCompilation=false --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMauiOld-Interp.binlog
     displayName: build old maui interp
+    condition: false
 
   - bash: dotnet build external/dotnet-podcasts/src/Mobile/Microsoft.NetConf2021.Maui.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:UseInterpreter=true -p:RunAOTCompilation=false --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/dotnet-podcasts-Interp.binlog
     displayName: build podcast interp
+    condition: false
 
   - task: CopyFiles@2
     displayName: copy apks
@@ -179,9 +185,11 @@ jobs:
 
   - bash: dotnet build HelloMauiOld/HelloMauiOld.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMauiOld-Aot.binlog
     displayName: build old maui AOT
+    condition: false
 
   - bash: dotnet build external/dotnet-podcasts/src/Mobile/Microsoft.NetConf2021.Maui.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/dotnet-podcasts-Aot.binlog
     displayName: build podcast AOT
+    condition: false
 
   - task: CopyFiles@2
     displayName: copy apks
