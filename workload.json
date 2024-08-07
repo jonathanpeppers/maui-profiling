@@ -1,0 +1,12 @@
+{
+    "microsoft.net.sdk.android": "35.0.0-preview.7.41/9.0.100-preview.7",
+    "microsoft.net.sdk.ios": "17.5.9231-net9-p7/9.0.100-preview.7",
+    "microsoft.net.sdk.maccatalyst": "17.5.9231-net9-p7/9.0.100-preview.7",
+    "microsoft.net.sdk.macos": "14.5.9231-net9-p7/9.0.100-preview.7",
+    "microsoft.net.sdk.maui": "9.0.0-preview.7.24407.4/9.0.100-preview.7",
+    "microsoft.net.sdk.tvos": "17.5.9231-net9-p7/9.0.100-preview.7",
+    "microsoft.net.workload.mono.toolchain.current": "9.0.0-preview.7.24405.7/9.0.100-preview.7",
+    "microsoft.net.workload.mono.toolchain.net8": "9.0.0-preview.7.24405.7/9.0.100-preview.7",
+    "microsoft.net.workload.emscripten.current": "9.0.0-preview.7.24373.5/9.0.100-preview.7",
+    "microsoft.net.workload.emscripten.net8": "9.0.0-preview.7.24373.5/9.0.100-preview.7"
+}
