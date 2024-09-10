@@ -8,9 +8,10 @@ variables:
   AndroidSupportedAbis: arm64-v8a
   AndroidPackageFormat: apk
   RID: android-arm64
-  DotNet.Version: 8.0.x
+  DotNet.Version: 9.0.x
+  DotNet.Root: /usr/local/share/dotnet/
   Maui.Feeds: --source https://api.nuget.org/v3/index.json
-  MauiTargetFramework: net8.0
+  MauiTargetFramework: net9.0
   NugetSecurityAnalysisWarningLevel: warn
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
@@ -131,11 +132,13 @@ jobs:
       dotnet restore HelloMauiOld/HelloMauiOld.csproj -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMauiOld-restore.binlog &&
       dotnet build HelloMauiOld/HelloMauiOld.csproj -f $(MauiTargetFramework)-android -r $(RID) -p:RunAOTCompilation=false --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMauiOld.binlog
     displayName: build old maui
+    condition: false
 
   - bash: >
       dotnet restore external/dotnet-podcasts/src/Mobile/Microsoft.NetConf2021.Maui.csproj -bl:$(Build.ArtifactStagingDirectory)/logs/dotnet-podcasts-restore.binlog &&
       dotnet build external/dotnet-podcasts/src/Mobile/Microsoft.NetConf2021.Maui.csproj -f $(MauiTargetFramework)-android -r $(RID) -p:RunAOTCompilation=false --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/dotnet-podcasts.binlog
     displayName: build podcast
+    condition: false
 
   - task: CopyFiles@2
     displayName: copy apks
@@ -146,19 +149,21 @@ jobs:
         HelloMauiOld/**/*-Signed.apk
         external/dotnet-podcasts/**/*-Signed.apk
       flattenFolders: true
-      targetFolder: $(Build.ArtifactStagingDirectory)/release
+      targetFolder: $(Build.ArtifactStagingDirectory)/release-jit
 
-  - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -t:Rebuild -p:UseInterpreter=true -p:RunAOTCompilation=false -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid-Interp.binlog
-    displayName: build android interp
+  - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -t:Rebuild -p:TrimMode=full -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid-Interp.binlog
+    displayName: build android trimmode
 
-  - bash: dotnet build HelloMaui/HelloMaui.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:UseInterpreter=true -p:RunAOTCompilation=false --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-Interp.binlog
-    displayName: build maui interp
+  - bash: dotnet build HelloMaui/HelloMaui.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:TrimMode=full --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMaui-Interp.binlog
+    displayName: build maui trimmode
 
-  - bash: dotnet build HelloMauiOld/HelloMauiOld.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:UseInterpreter=true -p:RunAOTCompilation=false --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMauiOld-Interp.binlog
-    displayName: build old maui interp
+  - bash: dotnet build HelloMauiOld/HelloMauiOld.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:TrimMode=full --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMauiOld-Interp.binlog
+    displayName: build old maui trimmode
+    condition: false
 
-  - bash: dotnet build external/dotnet-podcasts/src/Mobile/Microsoft.NetConf2021.Maui.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:UseInterpreter=true -p:RunAOTCompilation=false --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/dotnet-podcasts-Interp.binlog
-    displayName: build podcast interp
+  - bash: dotnet build external/dotnet-podcasts/src/Mobile/Microsoft.NetConf2021.Maui.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:TrimMode=full --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/dotnet-podcasts-Interp.binlog
+    displayName: build podcast trimmode
+    condition: false
 
   - task: CopyFiles@2
     displayName: copy apks
@@ -169,7 +174,7 @@ jobs:
         HelloMauiOld/**/*-Signed.apk
         external/dotnet-podcasts/**/*-Signed.apk
       flattenFolders: true
-      targetFolder: $(Build.ArtifactStagingDirectory)/release-interp
+      targetFolder: $(Build.ArtifactStagingDirectory)/release-trimmode-full
 
   - bash: dotnet build HelloAndroid/HelloAndroid.csproj -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true -bl:$(Build.ArtifactStagingDirectory)/logs/HelloAndroid-Aot.binlog
     displayName: build android AOT
@@ -179,9 +184,11 @@ jobs:
 
   - bash: dotnet build HelloMauiOld/HelloMauiOld.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/HelloMauiOld-Aot.binlog
     displayName: build old maui AOT
+    condition: false
 
   - bash: dotnet build external/dotnet-podcasts/src/Mobile/Microsoft.NetConf2021.Maui.csproj -f $(MauiTargetFramework)-android -r $(RID) -t:Rebuild -p:RunAOTCompilation=true -p:AndroidEnableProfiledAot=true --no-restore -bl:$(Build.ArtifactStagingDirectory)/logs/dotnet-podcasts-Aot.binlog
     displayName: build podcast AOT
+    condition: false
 
   - task: CopyFiles@2
     displayName: copy apks
