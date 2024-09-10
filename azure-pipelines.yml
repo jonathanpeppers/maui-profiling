@@ -8,7 +8,7 @@ variables:
   AndroidSupportedAbis: arm64-v8a
   AndroidPackageFormat: apk
   RID: android-arm64
-  DotNet.Version: 9.0.100-rc.1
+  DotNet.Version: 9.0.x
   DotNet.Root: /usr/local/share/dotnet/
   Maui.Feeds: --source https://api.nuget.org/v3/index.json
   MauiTargetFramework: net9.0
