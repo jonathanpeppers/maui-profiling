@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <MauiUseDefaultAotProfile>false</MauiUseDefaultAotProfile>
+  </PropertyGroup>
+  <ItemGroup>
+    <AndroidAotProfile Include="$(MSBuildThisFileDirectory)maui.aotprofile" />
+  </ItemGroup>
+</Project>
